@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-11-23 08:43:52
- * @LastEditTime: 2021-12-06 12:49:19
+ * @LastEditTime: 2021-12-06 13:04:14
  * @LastEditors: Please set LastEditors
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \undefinede:\VsProject\Cpp_Speech\README.md
@@ -20,7 +20,7 @@
 
 <details> 
     <summary>Chapter 01 语音信号基础知识</summary> <p>  
-    <a href ="./Chapter01_AduioFundamental/audioread.cpp">1.1 wav文件解析</a> <br> 
+    <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audio.cpp">1.1 wav文件解析</a> <br> 
      1.2 [wav波形绘制（OpenGL）](./Chapter01_AduioFundamental/)  <br>
     </p></details>
 
