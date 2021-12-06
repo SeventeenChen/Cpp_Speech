@@ -1,14 +1,6 @@
-<!--
- * @Author: your name
- * @Date: 2021-11-23 08:43:52
- * @LastEditTime: 2021-12-06 13:06:46
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \undefinede:\VsProject\Cpp_Speech\README.md
--->
 # 《MATLAB在语音信号分析与合成中的应用》 （宋知用）
 
--  **C++**实现版 
+-   **C++**实现版 
 - 较教材源代码增加语音信号基本操作于第一章
 - [ ] **Updating**
 
