@@ -1,6 +1,6 @@
 # 《MATLAB在语音信号分析与合成中的应用》 （宋知用）
 
--   **C++**实现版 
+- **C++**
 - 较教材源代码增加语音信号基本操作于第一章
 - [ ] **Updating**
 
@@ -22,6 +22,6 @@
 
 # REFERENCE
 
-# [MATLAB在语音信号分析与合成中的应用 宋知用 著](https://item.jd.com/12271572.html) <br> 
+[MATLAB在语音信号分析与合成中的应用 宋知用 著](https://item.jd.com/12271572.html) <br> 
 [语音信号处理（C++版）梁瑞宇，赵力，王青云 等 著](https://item.jd.com/12313550.html) <br> 
 
