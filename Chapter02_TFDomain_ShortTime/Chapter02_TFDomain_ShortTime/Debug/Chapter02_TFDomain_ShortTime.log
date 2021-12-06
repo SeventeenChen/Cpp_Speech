@@ -1,0 +1,4 @@
+﻿  audio.cpp
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\audio.cpp(144): warning C4244: “初始化”: 从“std::streamoff”转换到“int”，可能丢失数据
+  Chapter02_TFDomain_ShortTime.vcxproj -> E:\VsProject\Cpp_Speech\Chapter02_TFDomain_ShortTime\Debug\Chapter02_TFDomain_ShortTime.exe
+  Chapter02_TFDomain_ShortTime.vcxproj -> E:\VsProject\Cpp_Speech\Chapter02_TFDomain_ShortTime\Debug\Chapter02_TFDomain_ShortTime.pdb (Full PDB)
