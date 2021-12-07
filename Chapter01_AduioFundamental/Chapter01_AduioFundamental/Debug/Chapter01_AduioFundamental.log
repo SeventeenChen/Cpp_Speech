@@ -1,3 +1,8 @@
 ﻿  main.cpp
+  audioread.cpp
+  Fundamental.cpp
+  audio.cpp
+e:\vsproject\cpp_speech\chapter01_aduiofundamental\chapter01_aduiofundamental\audio.cpp(156): warning C4244: “初始化”: 从“std::streamoff”转换到“int”，可能丢失数据
+  正在生成代码...
   Chapter01_AduioFundamental.vcxproj -> E:\VsProject\Cpp_Speech\Chapter01_AduioFundamental\Debug\Chapter01_AduioFundamental.exe
   Chapter01_AduioFundamental.vcxproj -> E:\VsProject\Cpp_Speech\Chapter01_AduioFundamental\Debug\Chapter01_AduioFundamental.pdb (Partial PDB)

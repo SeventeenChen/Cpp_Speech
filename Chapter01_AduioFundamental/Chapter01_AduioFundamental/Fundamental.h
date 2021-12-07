@@ -15,11 +15,12 @@
 #include <vector>
 #include "audio.h"
 #include <string>
+#include <tuple>
 #include <iostream>
 using namespace std;
 
-std::vector<double> GetFileData(string WcsTrainDataName, int &fs, bool disp_flag);
-//读取文件内容，返回数据
+std::tuple<vector<double>, int> GetFileData(string WcsTrainDataName, int fs, bool disp_flag);
+//读取文件内容，返回音频数据和采样率
 
 void GetInputData(std::vector<double> &in_dataArray, std::vector<double>&out_dataArray, int flag);
 //GetInputData:用于从音频文件中获取用于处理的数据，in_dataArray是输入语音数据，out_dataArray是输出数据。

@@ -10,22 +10,22 @@
 // 修改说明：
 // 软件版本：VS2015
 //----------------------------------------------------------------*/
-#include <vector>
 #include "Fundamental.h"
 
 /*-----------------------------------------------------------------
-// 输入：文件名，采样频率
-// 输出：音频数据
-// 功能描述：读取wav文件至内存
+// 输入：文件名，采样频率（任意int类型），显示头文件标记（bool型）
+// 输出：tuple型（音频数据, 实际采样频率）
+// 功能描述：读取wav文件至内存，提取音频数据及采样频率
 // 作者：SeventeenChen
 // 日期：2021/11/27
-// 修改人：
-// 记录：
+// 修改人：SeventeenChen
+// 记录：可同时返回音频数据与采样频率
+// 日期：2021/12/07
 // 修改人：
 // 记录：
 // 版本：
 -----------------------------------------------------------------*/
-std::vector<double> GetFileData(string file, int &fs, bool disp_flag)
+std::tuple<vector<double>, int> GetFileData(string file, int fs, bool disp_flag)
 {
 	CWave wave;	
 	std::ifstream ifs (file, ios::in | ios::binary);
@@ -33,7 +33,7 @@ std::vector<double> GetFileData(string file, int &fs, bool disp_flag)
 	if (!ifs)
 	{
 		std::cout << "File could not be opened" << endl;		// 异常处理
-		return std::vector<double>(0);
+		return make_tuple(std::vector<double>(0), 0);
 	}
 	else 
 	{
@@ -47,7 +47,7 @@ std::vector<double> GetFileData(string file, int &fs, bool disp_flag)
 		fs = int(wave.m_wave.SampleRate);	// 读取采样率
 		std::vector<double> in_dataArray;	// 读入音频数据
 		GetInputData(wave.m_dataArray, in_dataArray, wave.m_wave.wChannels);	// 取单通道
-		return in_dataArray;
+		return make_tuple(in_dataArray, fs);
 	}
 	
 }
