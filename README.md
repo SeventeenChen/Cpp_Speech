@@ -11,10 +11,11 @@
 # 目录
 
 <details> 
-    <summary>Chapter 01 语音信号基础知识</summary> <p>  
-    <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioread.cpp">1.1 语音信号的读取</a> <br> 
-     1.2 [wav波形绘制（OpenGL）](./Chapter01_AduioFundamental/)  <br>
-    </p></details>
+<summary>Chapter 01 语音信号基础知识</summary> <p style="text-align:left">
+<a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioread.cpp">1.1 语音信号的读取</a> <br>
+<a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioplot.cpp">1.2 语音信号波形的绘制</a> <br>
+</p></details>
+
 
 
 

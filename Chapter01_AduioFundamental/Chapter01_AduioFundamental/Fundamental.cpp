@@ -21,8 +21,9 @@
 // 修改人：SeventeenChen
 // 记录：可同时返回音频数据与采样频率
 // 日期：2021/12/07
-// 修改人：
-// 记录：
+// 修改人：SeventeenChen
+// 记录：增加文件不能打开时的抛出异常
+// 日期：2021/12/08
 // 版本：
 -----------------------------------------------------------------*/
 std::tuple<vector<double>, int> GetFileData(string file, int fs, bool disp_flag)
@@ -32,7 +33,7 @@ std::tuple<vector<double>, int> GetFileData(string file, int fs, bool disp_flag)
 
 	if (!ifs)
 	{
-		std::cout << "File could not be opened" << endl;		// 异常处理
+		throw "File could not be opened";		// 异常处理
 		return make_tuple(std::vector<double>(0), 0);
 	}
 	else 

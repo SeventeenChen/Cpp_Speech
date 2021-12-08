@@ -11,25 +11,26 @@
 // 软件版本：VS2015
 //----------------------------------------------------------------
 #include "audioread.h"
-// #include "audioplot.h"
+#include "audioplot.h"
 
 int main()
 {
 	string filepath = "bluesky3.wav";
 	int fs = 16000;
-	bool disp_flag = true;
+	bool disp_flag = false;
 	std::tuple<vector <double>, int> in_data;
 	std::vector<double> in_array;
 
-	// 注：项目右键-属性-系统-子系统-控制台
+	// 注：项目右键-属性-链接器-系统-子系统-控制台
 	in_data = audioread(filepath, fs, disp_flag);	// 语音信号的读取
 
 	in_array = std::get<0>(in_data);	// 音频数据
 	fs = std::get<1>(in_data);			// 采样频率
 
-	cout << "fs = " << fs << endl;
-
-	// audioplot(in_array);
+	// cout << "fs = " << fs << endl;
+	// 注：项目右键-属性-配置：Debug-C/C++-代码生成-运行库：多线程调试DLL（/MDd）
+	// openGL配置：https://blog.csdn.net/lady_killer9/article/details/88987990
+	GLFWPlot(in_array);
 
 	return 0;
 }
