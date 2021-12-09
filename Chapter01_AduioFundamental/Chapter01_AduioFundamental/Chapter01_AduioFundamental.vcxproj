@@ -129,7 +129,8 @@
   <ItemGroup>
     <ClCompile Include="audio.cpp" />
     <ClCompile Include="audioplot.cpp" />
-    <ClCompile Include="Fundamental.cpp" />
+    <ClCompile Include="enframe.cpp" />
+    <ClCompile Include="fileread.cpp" />
     <ClCompile Include="audioread.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
@@ -138,7 +139,8 @@
     <ClInclude Include="audio.h" />
     <ClInclude Include="audioplot.h" />
     <ClInclude Include="audioread.h" />
-    <ClInclude Include="Fundamental.h" />
+    <ClInclude Include="enframe.h" />
+    <ClInclude Include="fileread.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav" />

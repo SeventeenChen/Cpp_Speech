@@ -18,9 +18,6 @@
     <ClCompile Include="audio.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Fundamental.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="audioread.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -33,18 +30,27 @@
     <ClCompile Include="glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="fileread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="enframe.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Fundamental.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="audioread.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="audioplot.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="fileread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="enframe.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

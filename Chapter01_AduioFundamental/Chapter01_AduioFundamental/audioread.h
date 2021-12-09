@@ -13,7 +13,7 @@
 #pragma once
 #include <string>
 #include <iomanip>
-#include "Fundamental.h"
+#include "fileread.h"
 /*-----------------------------------------------------------------
 // 输入：wav文件名（string），采样率（int），是否显示文件头（bool）
 // 输出：wav语音头数据至控制台，wav音频数据（归一化）至txt文件
