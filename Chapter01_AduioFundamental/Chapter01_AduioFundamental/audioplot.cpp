@@ -13,19 +13,19 @@
 #include "audioplot.h"
 
 /*-----------------------------------------------------------------
-// 输入：音频数据
+// 输入：音频数据（vector），图像标题（string）
 // 输出：
 // 功能描述：利用openGL绘制音频波形
 // 作者：SeventeenChen
 // 日期：2021/12/08
-// 修改人：
-// 记录：
-// 日期：
+// 修改人：SeventeenChen
+// 记录：添加title标记
+// 日期：2021/12/10
 // 修改人：
 // 记录：
 // 版本：
 -----------------------------------------------------------------*/
-int GLFWPlot(std::vector<double> in_dataArray)
+int GLFWPlot(std::vector<double> in_dataArray, const char *title)
 {	
 	GLFWwindow* window;
 
@@ -34,7 +34,7 @@ int GLFWPlot(std::vector<double> in_dataArray)
 		return -1;
 
 	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(800, 800, "Visualize Waveform", NULL, NULL);
+	window = glfwCreateWindow(800, 800, title, NULL, NULL);
 	if (!window)
 	{
 		glfwTerminate();

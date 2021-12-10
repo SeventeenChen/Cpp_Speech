@@ -28,11 +28,12 @@ std::vector<vector<double> > enframe(vector<double> in_array, vector<double> win
 	vector<vector<double> >f(frame_num, vector<double>(len_win));	
 	for (int i = 0; i < frame_num; i++)
 	{
-		for (int j = 0; j < len_win; i++)
+		for (int j = 0; j < len_win; j++)
 		{
 			f[i][j] = in_array[i * frame_shift + j] * win[j];
 		}
 	}
+
 	return f;
 }
 

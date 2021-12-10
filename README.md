@@ -15,6 +15,7 @@
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioread.cpp">1.1 语音信号的读取</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioplot.cpp">1.2 语音信号波形的绘制</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/enframe.cpp">1.3 窗函数</a> <br>
+<a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/enframe.cpp">1.4 加窗分帧</a> <br>
 </p></details>
 
 
