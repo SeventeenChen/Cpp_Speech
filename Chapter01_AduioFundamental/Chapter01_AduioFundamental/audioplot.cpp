@@ -79,12 +79,12 @@ int GLFWPlot(std::vector<double> in_dataArray, const char *title)
 -----------------------------------------------------------------*/
 void audioplot(std::vector<double> in_dataArray)
 {
-	glClearColor(0.8, 0.8, 0.8, 0.8);
+	glClearColor(0.8, 0.8, 0.8, 0.8);	// 窗口底色
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glLineWidth(2);		//设置线段宽度
 	glBegin(GL_LINES);
-	glColor3f(0.0, 0.0, 1.0);
+	glColor3f(0.0, 0.0, 1.0);	// 线段颜色
 
 	int i = 0;
 	float xstart = -1.0;
@@ -95,7 +95,7 @@ void audioplot(std::vector<double> in_dataArray)
 
 	int wav_length = in_dataArray.size();
 	float x_stepsize;
-	x_stepsize = 2.0/wav_length;
+	x_stepsize = 2.0/wav_length;	// 根据数据长度计算步长，使得绘制数据水平铺满（-1~1）
 	for (i; i < wav_length; i++)
 	{
 		xstart = xstart + x_stepsize;
@@ -104,8 +104,8 @@ void audioplot(std::vector<double> in_dataArray)
 
 		yend = in_dataArray[i];
 		
-		glVertex2f(xstart, ystart);
-		glVertex2f(xend, yend);
+		glVertex2f(xstart, ystart);	// 折线起点
+		glVertex2f(xend, yend);		// 折现终点
 
 		temp = yend;    //终点作为下一次的起点
 	}
