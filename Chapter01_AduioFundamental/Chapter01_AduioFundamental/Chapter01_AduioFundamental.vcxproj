@@ -134,6 +134,8 @@
     <ClCompile Include="audioread.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="resample.cpp" />
+    <ClCompile Include="spline.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio.h" />
@@ -141,6 +143,8 @@
     <ClInclude Include="audioread.h" />
     <ClInclude Include="enframe.h" />
     <ClInclude Include="fileread.h" />
+    <ClInclude Include="resample.h" />
+    <ClInclude Include="spline.h" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav" />

@@ -36,6 +36,12 @@
     <ClCompile Include="enframe.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="resample.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="spline.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio.h">
@@ -51,6 +57,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="enframe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="resample.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="spline.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

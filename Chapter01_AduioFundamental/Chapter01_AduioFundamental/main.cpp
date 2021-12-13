@@ -13,6 +13,7 @@
 #include "audioread.h"
 #include "audioplot.h"
 #include "enframe.h"
+#include "resample.h"
 
 int main()
 {
@@ -28,12 +29,20 @@ int main()
 	in_array = std::get<0>(in_data);	// 音频数据
 	fs = std::get<1>(in_data);			// 采样频率
 
+	// 重采样测试（上采样/降采样）
+	int target_fs = 16000;	// 重采样频率设置
+	std::vector<double> resamper_vec;
+	resamper_vec = resample(in_array, target_fs, fs);
+
+
+	/*-------------- 语音信号波形可视化
 	// cout << "fs = " << fs << endl;
 	// 注：项目右键-属性-配置：Debug-C/C++-代码生成-运行库：多线程调试DLL（/MDd）
 	// openGL配置：https://blog.csdn.net/lady_killer9/article/details/88987990
 	// GLFWPlot(in_array, "waveform");
+	-----------*/
 
-	// 窗函数
+	/*-------------- 窗函数
 	std::vector<double> rect_window;
 	std::vector<double> hann_window;
 	std::vector<double> hamm_window;
@@ -43,25 +52,27 @@ int main()
 	hann_window = window(win_len, "hanning");
 	hamm_window = window(win_len, "hamming");
 
-	///*cout << "rectangle window fuction: " << endl;
-	//for (int i = 0; i < win_len; i++)
-	//{
-	//	cout << rect_window[i] << endl;
-	//}
-	//cout << "----------------------------------" << endl;
-	//cout << "hanning window fuction: " << endl;
-	//for (int i = 0; i < win_len; i++)
-	//{
-	//	cout << hann_window[i] << endl;
-	//}
-	//cout << "----------------------------------" << endl;
-	//cout << "hamming window fuction: " << endl;
-	//for (int i = 0; i < win_len; i++)
-	//{
-	//	cout << hamm_window[i] << endl;
-	//}*/
+	
+	cout << "rectangle window fuction: " << endl;
+	for (int i = 0; i < win_len; i++)
+	{
+		cout << rect_window[i] << endl;
+	}
+	cout << "----------------------------------" << endl;
+	cout << "hanning window fuction: " << endl;
+	for (int i = 0; i < win_len; i++)
+	{
+		cout << hann_window[i] << endl;
+	}
+	cout << "----------------------------------" << endl;
+	cout << "hamming window fuction: " << endl;
+	for (int i = 0; i < win_len; i++)
+	{
+		cout << hamm_window[i] << endl;
+	}
+	-----------*/
 
-	// 加窗分帧
+	/*-------------- 加窗分帧
 	int frame_num = (in_array.size() - win_len + frame_shift) / frame_shift;
 	vector<vector<double> >frame_signal(frame_num, vector<double>(win_len));
 	vector<double> one_frame_signal(win_len);
@@ -80,6 +91,7 @@ int main()
 	str = "The\40" + std::to_string(frame_index) + "th frame waveform";
 	const char *title = str.c_str();
 	GLFWPlot(one_frame_signal, title);
+	-----------*/
 
 
 	return 0;

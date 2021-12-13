@@ -1,3 +1,18 @@
-﻿  main.cpp
+﻿  spline.cpp
+  resample.cpp
+e:\vsproject\cpp_speech\chapter01_aduiofundamental\chapter01_aduiofundamental\resample.cpp(52): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+  main.cpp
+  audioread.cpp
+  fileread.cpp
+  enframe.cpp
+  audioplot.cpp
+e:\vsproject\cpp_speech\chapter01_aduiofundamental\chapter01_aduiofundamental\audioplot.cpp(82): warning C4305: “参数”: 从“double”到“GLclampf”截断
+e:\vsproject\cpp_speech\chapter01_aduiofundamental\chapter01_aduiofundamental\audioplot.cpp(98): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+e:\vsproject\cpp_speech\chapter01_aduiofundamental\chapter01_aduiofundamental\audioplot.cpp(105): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  audio.cpp
+e:\vsproject\cpp_speech\chapter01_aduiofundamental\chapter01_aduiofundamental\audio.cpp(156): warning C4244: “初始化”: 从“std::streamoff”转换到“int”，可能丢失数据
+  正在生成代码...
+  glad.c
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
   Chapter01_AduioFundamental.vcxproj -> E:\VsProject\Cpp_Speech\Chapter01_AduioFundamental\Debug\Chapter01_AduioFundamental.exe
   Chapter01_AduioFundamental.vcxproj -> E:\VsProject\Cpp_Speech\Chapter01_AduioFundamental\Debug\Chapter01_AduioFundamental.pdb (Partial PDB)
