@@ -4,10 +4,6 @@
 - 较教材源代码增加语音信号基本操作于第一章
 - [ ] **Updating**
 
-## For any question, please don't hestiate to contact me!
-
-### Email: 675284835@qq.com
-
 # 目录
 
 <details> 
@@ -16,11 +12,13 @@
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioplot.cpp">1.2 语音信号波形的绘制</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/enframe.cpp">1.3 窗函数</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/enframe.cpp">1.4 加窗分帧</a> <br>
+<a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/resample.cpp">1.5 语音信号的重采样</a> <br>
 </p></details>
 
+------
+# For any question, please don't hestiate to contact me!
 
-
-
+## Email: 675284835@qq.com
 ------
 
 # REFERENCE
