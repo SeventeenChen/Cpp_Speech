@@ -30,10 +30,10 @@ int main()
 	fs = std::get<1>(in_data);			// 采样频率
 
 	// 重采样测试（上采样/降采样）
-	int target_fs = 16000;	// 重采样频率设置
+	int target_fs = 44100;	// 重采样频率设置 e.g. 8k,16k,32k,44.1k
 	std::vector<double> resamper_vec;
 	resamper_vec = resample(in_array, target_fs, fs);
-
+	GLFWPlot(resamper_vec, "resample waveform");
 
 	/*-------------- 语音信号波形可视化
 	// cout << "fs = " << fs << endl;

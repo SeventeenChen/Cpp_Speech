@@ -31,6 +31,7 @@ std::vector<double> resample(vector<double> in_array, int target_fs, int source_
 {
 	int source_len, target_len;
 	double duration;	// 序列时长初始化（秒）
+	double resample_stepsize = (double) source_fs / target_fs;	// 重采样序列自变量步长
 	double leftBound = 0, rightBound = 0;	//边界导数
 
 	source_len = in_array.size();		// 已知序列长度
@@ -49,7 +50,7 @@ std::vector<double> resample(vector<double> in_array, int target_fs, int source_
 	}
 	Spline sp(x0, y0, source_len, GivenSecondOrder, leftBound, rightBound);
 	duration = double(source_len) / source_fs;
-	target_len = duration * target_fs;	// 重采样后序列长度
+	target_len = floor(duration * target_fs);	// 重采样后序列长度
 	std::vector<double> target_x(target_len);	// 初始化重采样后序列自变量
 	std::vector<double> target_y(target_len);	// 初始化重采样后序列自变量
 	std::iota(target_x.begin(), target_x.end(), 0);	// 递增序列
@@ -57,7 +58,15 @@ std::vector<double> resample(vector<double> in_array, int target_fs, int source_
 	double *y = new double[target_len];	// 重采样后序列因变量数组初始化
 	if (!target_x.empty())
 	{
-		memcpy(x, &target_x[0], target_len * sizeof(double));
+		memcpy(x, &target_x[0], target_len * sizeof(double));	// 重采样序列自变量索引
+	}
+	for (int i = 0; i < target_len; i++)
+	{
+		x[i] *= resample_stepsize;		// 实际重采样自变量序列
+		if (x[i] > x0[source_len - 1])
+		{
+			x[i] = x0[source_len - 1];
+		}
 	}
 	if (!target_y.empty())
 	{
