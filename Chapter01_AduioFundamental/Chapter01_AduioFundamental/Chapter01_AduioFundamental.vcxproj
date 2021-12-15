@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="audio.cpp" />
     <ClCompile Include="audioplot.cpp" />
+    <ClCompile Include="audiowrite.cpp" />
     <ClCompile Include="enframe.cpp" />
     <ClCompile Include="fileread.cpp" />
     <ClCompile Include="audioread.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="audio.h" />
     <ClInclude Include="audioplot.h" />
     <ClInclude Include="audioread.h" />
+    <ClInclude Include="audiowrite.h" />
     <ClInclude Include="enframe.h" />
     <ClInclude Include="fileread.h" />
     <ClInclude Include="resample.h" />

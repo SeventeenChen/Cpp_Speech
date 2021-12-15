@@ -14,6 +14,7 @@
 #include "audioplot.h"
 #include "enframe.h"
 #include "resample.h"
+#include "audiowrite.h"
 
 int main()
 {
@@ -33,7 +34,10 @@ int main()
 	int target_fs = 44100;	// 重采样频率设置 e.g. 8k,16k,32k,44.1k
 	std::vector<double> resamper_vec;
 	resamper_vec = resample(in_array, target_fs, fs);
-	GLFWPlot(resamper_vec, "resample waveform");
+	// GLFWPlot(resamper_vec, "resample waveform");
+
+	filepath = "bluesky3_44k.wav";
+	audiowrite(resamper_vec, target_fs, filepath);
 
 	/*-------------- 语音信号波形可视化
 	// cout << "fs = " << fs << endl;

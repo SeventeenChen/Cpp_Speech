@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------
 // Copyright (C) SeventeenChen
 // License:MIT
-// 文件名：enframe.cpp
+// 文件名：resample.cpp
 // 文件功能描述：语音信号的重采样
 // 创建者：SeventeenChen
 // 时间：2021/12/11
@@ -41,7 +41,7 @@ std::vector<double> resample(vector<double> in_array, int target_fs, int source_
 	double *x0 = new double[source_len];	// 已知序列自变量数组初始化
 	if (!source_x.empty())
 	{
-		memcpy(x0, &source_x[0], source_len * sizeof(double));
+		memcpy(x0, &source_x[0], source_len * sizeof(double));	// 赋值
 	}
 	double *y0 = new double[source_len];	// 已知序列因变量数组初始化
 	if (!in_array.empty())
