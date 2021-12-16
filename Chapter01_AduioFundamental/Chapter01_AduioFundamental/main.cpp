@@ -36,6 +36,7 @@ int main()
 	resamper_vec = resample(in_array, target_fs, fs);
 	// GLFWPlot(resamper_vec, "resample waveform");
 
+	// ÓïÒôĞÅºÅµÄĞ´Èë
 	filepath = "bluesky3_44k.wav";
 	audiowrite(resamper_vec, target_fs, filepath);
 

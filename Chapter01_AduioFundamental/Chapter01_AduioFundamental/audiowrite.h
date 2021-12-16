@@ -1,3 +1,16 @@
+//----------------------------------------------------------------
+// Copyright (C) SeventeenChen
+// License:MIT
+// 文件名：audiowrite.h
+// 文件功能描述：语音信号的写入
+// 创建者：SeventeenChen
+// 时间：2021/12/16
+// 参考：https://www.cnblogs.com/wangguchangqing/p/5970516.html
+// 修改人：
+// 时间：
+// 修改说明：
+// 软件版本：VS2015
+//----------------------------------------------------------------
 #pragma once
 
 #include <cstdint>

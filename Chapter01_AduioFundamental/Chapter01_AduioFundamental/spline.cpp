@@ -1,8 +1,16 @@
+//----------------------------------------------------------------
+// Copyright (C) SeventeenChen
+// License:MIT
+// 文件名：spline.cpp
+// 文件功能描述：插值
+// 创建者：SeventeenChen
+// 时间：2021/12/14
+// 修改人：
+// 时间：
+// 修改说明：
+// 软件版本：VS2015
+//----------------------------------------------------------------
 #include "Spline.h"
-#include <cstring>
-#include <algorithm>
-
-using namespace std;
 
 namespace SplineSpace
 {

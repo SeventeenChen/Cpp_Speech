@@ -16,6 +16,10 @@
 // 创建日期: 2017年2月20日
 // 修改日期：
 //-----------------------------------------------------------------------------
+#include <cstring>
+#include <algorithm>
+
+using namespace std;
 
 #ifndef _SPLINE_H
 #define _SPLINE_H
