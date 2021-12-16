@@ -13,11 +13,11 @@
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/enframe.cpp">1.3 窗函数</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/enframe.cpp">1.4 加窗分帧</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/resample.cpp">1.5 语音信号的重采样</a> <br>
+<a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioread.cpp">1.6 语音信号的写入</a> <br>
 </p></details>
 
 ------
 # For any question, please don't hestiate to contact me!
-
 ## Email: 675284835@qq.com
 ------
 
