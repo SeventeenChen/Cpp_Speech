@@ -18,7 +18,7 @@
 
 int main()
 {
-	string filepath = "bluesky3.wav";
+	string filepath = "bluesky3.wav";	// 可以是绝对路径 
 	int fs = 16000;
 	bool disp_flag = false;
 	std::tuple<vector <double>, int> in_data;
@@ -30,22 +30,22 @@ int main()
 	in_array = std::get<0>(in_data);	// 音频数据
 	fs = std::get<1>(in_data);			// 采样频率
 
-	// 重采样测试（上采样/降采样）
-	int target_fs = 44100;	// 重采样频率设置 e.g. 8k,16k,32k,44.1k
-	std::vector<double> resamper_vec;
-	resamper_vec = resample(in_array, target_fs, fs);
-	// GLFWPlot(resamper_vec, "resample waveform");
+	//// 重采样测试（上采样/降采样）
+	//int target_fs = 44100;	// 重采样频率设置 e.g. 8k,16k,32k,44.1k
+	//std::vector<double> resamper_vec;
+	//resamper_vec = resample(in_array, target_fs, fs);
+	//// GLFWPlot(resamper_vec, "resample waveform");
 
-	// 语音信号的写入
-	filepath = "bluesky3_44k.wav";
-	audiowrite(resamper_vec, target_fs, filepath);
+	//// 语音信号的写入
+	//filepath = "bluesky3_44k.wav";
+	//audiowrite(resamper_vec, target_fs, filepath);
 
-	/*-------------- 语音信号波形可视化
-	// cout << "fs = " << fs << endl;
-	// 注：项目右键-属性-配置：Debug-C/C++-代码生成-运行库：多线程调试DLL（/MDd）
-	// openGL配置：https://blog.csdn.net/lady_killer9/article/details/88987990
-	// GLFWPlot(in_array, "waveform");
-	-----------*/
+	////语音信号波形可视化
+	//cout << "fs = " << fs << endl;
+	//// 注：项目右键-属性-配置：Debug-C/C++-代码生成-运行库：多线程调试DLL（/MDd）
+	//// openGL配置：https://blog.csdn.net/lady_killer9/article/details/88987990
+	//GLFWPlot(in_array, "waveform");
+	
 
 	/*-------------- 窗函数
 	std::vector<double> rect_window;

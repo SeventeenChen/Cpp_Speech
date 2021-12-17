@@ -14,33 +14,4 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="audio.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="DomainAnalysis.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="test.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="audio.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="DomainAnalysis.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="bluesky3.wav">
-      <Filter>资源文件</Filter>
-    </Media>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="bluesky3.txt">
-      <Filter>资源文件</Filter>
-    </Text>
-  </ItemGroup>
 </Project>

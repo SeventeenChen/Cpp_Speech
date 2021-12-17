@@ -145,21 +145,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="audio.cpp" />
-    <ClCompile Include="DomainAnalysis.cpp" />
-    <ClCompile Include="test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="audio.h" />
-    <ClInclude Include="DomainAnalysis.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="bluesky3.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="bluesky3.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
