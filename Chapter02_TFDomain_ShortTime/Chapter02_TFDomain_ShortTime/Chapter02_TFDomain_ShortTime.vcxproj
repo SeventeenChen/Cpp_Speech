@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="short_time_energy.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="short_time_energy.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{49400E96-E878-45A1-871B-4D83C1FC8CF4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
