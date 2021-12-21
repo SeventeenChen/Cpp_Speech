@@ -20,9 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="spline.cpp" />
+    <ClCompile Include="universal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="spline.h" />
+    <ClInclude Include="universal.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{49400E96-E878-45A1-871B-4D83C1FC8CF4}</ProjectGuid>
@@ -97,10 +103,11 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE</PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <CompileAs>CompileAsCpp</CompileAs>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>E:\VsProject\Cpp_Speech\Chapter01_AduioFundamental\Chapter01_AduioFundamental;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

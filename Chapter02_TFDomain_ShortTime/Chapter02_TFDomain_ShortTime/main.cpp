@@ -1,6 +1,5 @@
+#include "universal.h"	
 // #include "short_time_energy.h"
-#include "../../Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioread.h"	// 属性 -> C/C++ -> 常规 -> 附加包含目录 
-// #include "../../Chapter01_AduioFundamental/Chapter01_AduioFundamental/audioplot.h"
 
 int main()
 {
