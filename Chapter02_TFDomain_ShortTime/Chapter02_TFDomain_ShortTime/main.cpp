@@ -1,11 +1,11 @@
 #include "universal.h"	
-// #include "short_time_energy.h"
+#include "short_time_energy.h"
 
 int main()
 {
 	string filepath = "bluesky3.wav";	// 可以是绝对路径 
 	int fs = 16000;
-	bool disp_flag = true;
+	bool disp_flag = false;
 	std::tuple<vector <double>, int> in_data;
 	std::vector<double> in_array;
 
@@ -16,13 +16,13 @@ int main()
 	fs = std::get<1>(in_data);			// 采样频率
 
 	
-	//int win_len = 200;	// set 10 for test
-	//int frame_shift = 80;
-	//std::vector<double> hann_window(win_len);	// 汉宁窗
-	//hann_window = window(win_len, "hanning");
-	//int frame_num = (in_array.size() - win_len + frame_shift) / frame_shift;
-	//std::vector<double> En(frame_num);
-	//En = energy(in_array, hann_window, frame_shift);
-	//GLFWPlot(En, "Short Time Energy");
+	int win_len = 200;	// set 10 for test
+	int frame_shift = 80;
+	std::vector<double> hann_window(win_len);	// 汉宁窗
+	hann_window = window(win_len, "hanning");
+	int frame_num = (in_array.size() - win_len + frame_shift) / frame_shift;
+	std::vector<double> En(frame_num);
+	En = energy(in_array, hann_window, frame_shift);
+	GLFWPlot(En, "Short Time Energy");
 	return 0;
 }

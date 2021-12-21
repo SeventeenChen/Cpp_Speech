@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="short_time_energy.cpp" />
     <ClCompile Include="spline.cpp" />
     <ClCompile Include="universal.cpp" />
   </ItemGroup>
@@ -27,6 +28,7 @@
     <Media Include="bluesky3.wav" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="short_time_energy.h" />
     <ClInclude Include="spline.h" />
     <ClInclude Include="universal.h" />
   </ItemGroup>

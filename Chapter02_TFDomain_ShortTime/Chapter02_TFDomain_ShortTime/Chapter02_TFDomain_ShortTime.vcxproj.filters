@@ -24,6 +24,9 @@
     <ClCompile Include="spline.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="short_time_energy.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav">
@@ -35,6 +38,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="spline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="short_time_energy.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
