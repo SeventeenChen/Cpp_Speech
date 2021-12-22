@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="short_time_energy.cpp" />
+    <ClCompile Include="short_zero_cross.cpp" />
     <ClCompile Include="spline.cpp" />
     <ClCompile Include="universal.cpp" />
   </ItemGroup>
@@ -29,6 +30,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="short_time_energy.h" />
+    <ClInclude Include="short_zero_cross.h" />
     <ClInclude Include="spline.h" />
     <ClInclude Include="universal.h" />
   </ItemGroup>

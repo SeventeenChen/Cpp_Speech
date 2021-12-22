@@ -45,6 +45,9 @@
     <ClCompile Include="audiowrite.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dc_removal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio.h">
@@ -69,6 +72,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="audiowrite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="dc_removal.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

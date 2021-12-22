@@ -22,7 +22,7 @@ int main()
 	hann_window = window(win_len, "hanning");
 	int frame_num = (in_array.size() - win_len + frame_shift) / frame_shift;
 	std::vector<double> En(frame_num);
-	En = energy(in_array, hann_window, frame_shift);
+	En = energy(in_array, hann_window, frame_shift);	// ∂Ã ±ƒ‹¡ø
 	GLFWPlot(En, "Short Time Energy");
 	return 0;
 }

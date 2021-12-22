@@ -14,6 +14,7 @@
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/enframe.cpp">1.4 加窗分帧</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/resample.cpp">1.5 语音信号的重采样</a> <br>
 <a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/audiowrite.cpp">1.6 语音信号的写入</a> <br>
+<a href ="./Chapter01_AduioFundamental/Chapter01_AduioFundamental/dc_removal.cpp">1.6 语音信号的去直流</a> <br>
 </p></details>
 
 <details> 

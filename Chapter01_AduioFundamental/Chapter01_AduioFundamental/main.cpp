@@ -15,6 +15,7 @@
 #include "enframe.h"
 #include "resample.h"
 #include "audiowrite.h"
+#include "dc_removal.h"
 
 int main()
 {
@@ -29,6 +30,10 @@ int main()
 
 	in_array = std::get<0>(in_data);	// 音频数据
 	fs = std::get<1>(in_data);			// 采样频率
+
+	// 消除直流分量测试
+	std::vector<double> out_array(in_array.size());
+	out_array = dc_removal(in_array);
 
 	//// 重采样测试（上采样/降采样）
 	//int target_fs = 44100;	// 重采样频率设置 e.g. 8k,16k,32k,44.1k
