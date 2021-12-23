@@ -30,6 +30,9 @@
     <ClCompile Include="short_zero_cross.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="xcorr.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav">
@@ -47,6 +50,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="short_zero_cross.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xcorr.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

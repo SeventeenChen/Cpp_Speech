@@ -24,6 +24,7 @@
     <ClCompile Include="short_zero_cross.cpp" />
     <ClCompile Include="spline.cpp" />
     <ClCompile Include="universal.cpp" />
+    <ClCompile Include="xcorr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav" />
@@ -33,6 +34,7 @@
     <ClInclude Include="short_zero_cross.h" />
     <ClInclude Include="spline.h" />
     <ClInclude Include="universal.h" />
+    <ClInclude Include="xcorr.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{49400E96-E878-45A1-871B-4D83C1FC8CF4}</ProjectGuid>
