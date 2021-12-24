@@ -33,6 +33,9 @@
     <ClCompile Include="short_time_zero_cross.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="stamd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav">
@@ -53,6 +56,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="short_time_zero_cross.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stamd.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

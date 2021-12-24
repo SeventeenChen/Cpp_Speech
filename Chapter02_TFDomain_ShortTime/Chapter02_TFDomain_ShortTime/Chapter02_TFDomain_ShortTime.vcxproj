@@ -23,6 +23,7 @@
     <ClCompile Include="short_time_energy.cpp" />
     <ClCompile Include="short_time_zero_cross.cpp" />
     <ClCompile Include="spline.cpp" />
+    <ClCompile Include="stamd.cpp" />
     <ClCompile Include="universal.cpp" />
     <ClCompile Include="xcorr.cpp" />
   </ItemGroup>
@@ -33,6 +34,7 @@
     <ClInclude Include="short_time_energy.h" />
     <ClInclude Include="short_time_zero_cross.h" />
     <ClInclude Include="spline.h" />
+    <ClInclude Include="stamd.h" />
     <ClInclude Include="universal.h" />
     <ClInclude Include="xcorr.h" />
   </ItemGroup>
