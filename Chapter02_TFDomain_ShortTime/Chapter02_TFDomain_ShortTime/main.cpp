@@ -1,6 +1,6 @@
 #include "universal.h"	
 #include "short_time_energy.h"
-#include "short_zero_cross.h"
+#include "short_time_zero_cross.h"
 #include "xcorr.h"
 
 int main()

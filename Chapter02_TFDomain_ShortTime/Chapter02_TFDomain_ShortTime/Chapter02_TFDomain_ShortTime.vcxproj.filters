@@ -27,10 +27,10 @@
     <ClCompile Include="short_time_energy.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="short_zero_cross.cpp">
+    <ClCompile Include="xcorr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="xcorr.cpp">
+    <ClCompile Include="short_time_zero_cross.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,10 +49,10 @@
     <ClInclude Include="short_time_energy.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="short_zero_cross.h">
+    <ClInclude Include="xcorr.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="xcorr.h">
+    <ClInclude Include="short_time_zero_cross.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

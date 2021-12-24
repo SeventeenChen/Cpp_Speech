@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------
 // Copyright (C) SeventeenChen
 // License:MIT
-// 文件名：short_zero_cross.h
+// 文件名：short_time_zero_cross.h
 // 文件功能描述：语音信号的短时平均过零率
 // 创建者：SeventeenChen
 // 时间：2021/12/22
