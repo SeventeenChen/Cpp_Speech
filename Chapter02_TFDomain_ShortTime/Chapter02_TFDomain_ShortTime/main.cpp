@@ -1,6 +1,6 @@
 #include "universal.h"	
-#include "short_time_energy.h"
-#include "short_time_zero_cross.h"
+#include "ste.h"
+#include "stzcr.h"
 #include "xcorr.h"
 #include "stamd.h"
 int main()

@@ -24,16 +24,19 @@
     <ClCompile Include="spline.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="short_time_energy.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="xcorr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="short_time_zero_cross.cpp">
+    <ClCompile Include="stamd.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="stamd.cpp">
+    <ClCompile Include="stftms.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ste.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stzcr.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,16 +52,16 @@
     <ClInclude Include="spline.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="short_time_energy.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="xcorr.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="short_time_zero_cross.h">
+    <ClInclude Include="stamd.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="stamd.h">
+    <ClInclude Include="ste.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stzcr.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

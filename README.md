@@ -20,8 +20,8 @@
 <details> 
 <summary>Chapter 02 语音信号的时频域特性 & 短时分析</summary> <p style="text-align:left">
 <a href ="./Chapter02_TFDomain_ShortTime/Chapter02_TFDomain_ShortTime/universal.cpp">2.1 语音信号的通用操作 （读写、绘制波形、加窗分帧、重采样）</a> <br>
-<a href ="./Chapter02_TFDomain_ShortTime/Chapter02_TFDomain_ShortTime/short_time_energy.cpp">2.2 语音信号的短时能量 （pr_2_3_1）</a> <br>
-<a href ="./Chapter02_TFDomain_ShortTime/Chapter02_TFDomain_ShortTime/short_time_zero_cross.cpp">2.2 语音信号的短时平均过零率 （pr_2_3_2）</a> <br>
+<a href ="./Chapter02_TFDomain_ShortTime/Chapter02_TFDomain_ShortTime/ste.cpp">2.2 语音信号的短时能量 （pr_2_3_1）</a> <br>
+<a href ="./Chapter02_TFDomain_ShortTime/Chapter02_TFDomain_ShortTime/stzcr.cpp">2.2 语音信号的短时平均过零率 （pr_2_3_2）</a> <br>
 <a href ="./Chapter02_TFDomain_ShortTime/Chapter02_TFDomain_ShortTime/xcorr.cpp">2.3 语音信号的短时自相关 </a> <br>
 <a href ="./Chapter02_TFDomain_ShortTime/Chapter02_TFDomain_ShortTime/stamd.cpp">2.4 语音信号的短时平均幅度差 </a> <br>
 </p></details>

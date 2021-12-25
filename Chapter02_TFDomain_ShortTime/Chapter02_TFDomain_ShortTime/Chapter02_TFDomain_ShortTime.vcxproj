@@ -20,10 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="short_time_energy.cpp" />
-    <ClCompile Include="short_time_zero_cross.cpp" />
+    <ClCompile Include="ste.cpp" />
+    <ClCompile Include="stzcr.cpp" />
     <ClCompile Include="spline.cpp" />
     <ClCompile Include="stamd.cpp" />
+    <ClCompile Include="stftms.cpp" />
     <ClCompile Include="universal.cpp" />
     <ClCompile Include="xcorr.cpp" />
   </ItemGroup>
@@ -31,8 +32,8 @@
     <Media Include="bluesky3.wav" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="short_time_energy.h" />
-    <ClInclude Include="short_time_zero_cross.h" />
+    <ClInclude Include="ste.h" />
+    <ClInclude Include="stzcr.h" />
     <ClInclude Include="spline.h" />
     <ClInclude Include="stamd.h" />
     <ClInclude Include="universal.h" />
