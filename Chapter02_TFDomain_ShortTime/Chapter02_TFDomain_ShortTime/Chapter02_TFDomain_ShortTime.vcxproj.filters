@@ -18,51 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="universal.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="spline.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="xcorr.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="stamd.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="stftms.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ste.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="stzcr.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav">
       <Filter>资源文件</Filter>
     </Media>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="universal.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="spline.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="xcorr.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="stamd.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ste.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="stzcr.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
