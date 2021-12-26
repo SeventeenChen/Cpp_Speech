@@ -40,9 +40,9 @@ const double max_8_bits = 128;	//因为归一化到-1到1
 #ifndef _pi_
 #define _pi_  3.1415926535898
 #endif
-#define FOURCC uint32_t	
+#define _FOURCC uint32_t	
 
-#define MAKE_FOURCC(a,b,c,d) \
+#define MAKEFOURCC(a,b,c,d) \
 ( ((uint32_t)d) | ( ((uint32_t)c) << 8 ) | ( ((uint32_t)b) << 16 ) | ( ((uint32_t)a) << 24 ) )
 
 template <char ch0, char ch1, char ch2, char ch3> struct MakeFOURCC { enum { value = (ch0 << 0) + (ch1 << 8) + (ch2 << 16) + (ch3 << 24) }; };
@@ -250,10 +250,10 @@ struct Wave_format {
 // The basic chunk of RIFF file format
 struct Base_chunk {
 
-	FOURCC fcc;    // FourCC id
+	_FOURCC fcc;    // FourCC id
 	uint32_t cb_size; // 数据域的大小
 
-	Base_chunk(FOURCC fourcc)
+	Base_chunk(_FOURCC fourcc)
 		: fcc(fourcc)
 	{
 		cb_size = 0;
@@ -296,7 +296,7 @@ struct Base_chunk {
 struct Wave_header {
 
 	shared_ptr<Base_chunk> riff;
-	FOURCC wave_fcc;
+	_FOURCC wave_fcc;
 	shared_ptr<Base_chunk> fmt;
 	shared_ptr<Wave_format>  fmt_data;
 	shared_ptr<Base_chunk> data;
@@ -407,8 +407,8 @@ private:
 		header = make_unique<Wave_header>();
 
 		// Read RIFF chunk
-		FOURCC fourcc;
-		ifs.read((char*)&fourcc, sizeof(FOURCC));
+		_FOURCC fourcc;
+		ifs.read((char*)&fourcc, sizeof(_FOURCC));
 
 		if (fourcc != MakeFOURCC<'R', 'I', 'F', 'F'>::value) // 判断是不是RIFF
 			return false;
@@ -417,14 +417,14 @@ private:
 
 		header->riff = make_shared<Base_chunk>(riff_chunk);
 
-		// Read WAVE FOURCC
-		ifs.read((char*)&fourcc, sizeof(FOURCC));
+		// Read WAVE _FOURCC
+		ifs.read((char*)&fourcc, sizeof(_FOURCC));
 		if (fourcc != MakeFOURCC<'W', 'A', 'V', 'E'>::value)
 			return false;
 		header->wave_fcc = fourcc;
 
 		// Read format chunk
-		ifs.read((char*)&fourcc, sizeof(FOURCC));
+		ifs.read((char*)&fourcc, sizeof(_FOURCC));
 		if (fourcc != MakeFOURCC<'f', 'm', 't', ' '>::value)
 			return false;
 

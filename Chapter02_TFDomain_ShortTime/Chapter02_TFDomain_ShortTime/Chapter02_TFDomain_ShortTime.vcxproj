@@ -20,9 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="stftms.cpp" />
+    <ClCompile Include="universal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stftms.h" />
+    <ClInclude Include="universal.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{49400E96-E878-45A1-871B-4D83C1FC8CF4}</ProjectGuid>
@@ -106,7 +112,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libfftw3-3.lib;libfftw3f-3.lib;libfftw3l-3.lib</AdditionalDependencies>
+      <AdditionalDependencies>libfftw3-3.lib;libfftw3f-3.lib;libfftw3l-3.lib;glfw3.lib;glfw3dll.lib;opengl32.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -123,7 +129,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libfftw3-3.lib;libfftw3f-3.lib;libfftw3l-3.lib</AdditionalDependencies>
+      <AdditionalDependencies>libfftw3-3.lib;libfftw3f-3.lib;libfftw3l-3.lib;glfw3.lib;glfw3dll.lib;opengl32.lib</AdditionalDependencies>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>

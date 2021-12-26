@@ -18,10 +18,24 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="stftms.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="universal.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav">
       <Filter>资源文件</Filter>
     </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stftms.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="universal.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
