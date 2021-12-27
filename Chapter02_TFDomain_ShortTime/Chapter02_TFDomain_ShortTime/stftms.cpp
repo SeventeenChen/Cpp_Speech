@@ -56,7 +56,7 @@ vector<vector <complex<double> > >stftms(vector<double>in_array, vector<double>w
 			}
 		}
 		p = fftw_plan_dft_1d(nfft, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
-		// fftw_execute(p); // repeat as needed
+		fftw_execute(p); // repeat as needed
 		for (j = 0; j < 1 + nfft / 2; j++)
 		{
 			d[k][j] = complex<double>(out[j][0], out[j][1]);

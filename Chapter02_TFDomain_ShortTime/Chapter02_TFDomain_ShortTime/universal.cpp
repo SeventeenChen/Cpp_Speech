@@ -12,7 +12,7 @@
 //----------------------------------------------------------------*/
 
 #include "universal.h"
-#include "spline.h"
+// #include "spline.h"
 /*-----------------------------------------------------------------
 // 输入：
 // 输出：
@@ -484,44 +484,44 @@ void GetInputData(std::vector<double> &in_dataArray, std::vector<double>&out_dat
 // 记录：
 // 版本：
 -----------------------------------------------------------------*/
-int GLFWPlot(std::vector<double> in_dataArray, const char *title)
-{
-	GLFWwindow* window;
-
-	/* Initialize the library */
-	if (!glfwInit())
-		return -1;
-
-	/* Create a windowed mode window and its OpenGL context */
-	window = glfwCreateWindow(800, 800, title, NULL, NULL);
-	if (!window)
-	{
-		glfwTerminate();
-		return -1;
-	}
-
-	/* Make the window's context current */
-	glfwMakeContextCurrent(window);
-
-	/* Loop until the user closes the window */
-	while (!glfwWindowShouldClose(window))
-	{
-
-		/*your draw*/
-		audioplot(in_dataArray);
-
-		/* Swap front and back buffers */
-		glfwSwapBuffers(window);
-
-		/* Poll for and process events */
-		glfwPollEvents();
-	}
-
-	glfwTerminate();
-
-	return 0;
-
-}
+//int GLFWPlot(std::vector<double> in_dataArray, const char *title)
+//{
+//	GLFWwindow* window;
+//
+//	/* Initialize the library */
+//	if (!glfwInit())
+//		return -1;
+//
+//	/* Create a windowed mode window and its OpenGL context */
+//	window = glfwCreateWindow(800, 800, title, NULL, NULL);
+//	if (!window)
+//	{
+//		glfwTerminate();
+//		return -1;
+//	}
+//
+//	/* Make the window's context current */
+//	glfwMakeContextCurrent(window);
+//
+//	/* Loop until the user closes the window */
+//	while (!glfwWindowShouldClose(window))
+//	{
+//
+//		/*your draw*/
+//		audioplot(in_dataArray);
+//
+//		/* Swap front and back buffers */
+//		glfwSwapBuffers(window);
+//
+//		/* Poll for and process events */
+//		glfwPollEvents();
+//	}
+//
+//	glfwTerminate();
+//
+//	return 0;
+//
+//}
 
 /*-----------------------------------------------------------------
 // 输入：音频数据
@@ -536,41 +536,41 @@ int GLFWPlot(std::vector<double> in_dataArray, const char *title)
 // 记录：
 // 版本：
 -----------------------------------------------------------------*/
-void audioplot(std::vector<double> in_dataArray)
-{
-	glClearColor(0.8, 0.8, 0.8, 0.8);	// 窗口底色
-	glClear(GL_COLOR_BUFFER_BIT);
-
-	glLineWidth(2);		//设置线段宽度
-	glBegin(GL_LINES);
-	glColor3f(0.0, 0.0, 1.0);	// 线段颜色
-
-	int i = 0;
-	float xstart = -1.0;
-	float ystart = 0.0;
-	float xend = 0.0;
-	float yend = 0.0;
-	float temp = 0.0;
-
-	int wav_length = in_dataArray.size();
-	float x_stepsize;
-	x_stepsize = 2.0 / wav_length;	// 根据数据长度计算步长，使得绘制数据水平铺满（-1~1）
-	for (i; i < wav_length; i++)
-	{
-		xstart = xstart + x_stepsize;
-		ystart = temp;
-		xend = xstart + x_stepsize;
-
-		yend = in_dataArray[i];
-
-		glVertex2f(xstart, ystart);	// 折线起点
-		glVertex2f(xend, yend);		// 折现终点
-
-		temp = yend;    //终点作为下一次的起点
-	}
-
-	glEnd();
-}
+//void audioplot(std::vector<double> in_dataArray)
+//{
+//	glClearColor(0.8, 0.8, 0.8, 0.8);	// 窗口底色
+//	glClear(GL_COLOR_BUFFER_BIT);
+//
+//	glLineWidth(2);		//设置线段宽度
+//	glBegin(GL_LINES);
+//	glColor3f(0.0, 0.0, 1.0);	// 线段颜色
+//
+//	int i = 0;
+//	float xstart = -1.0;
+//	float ystart = 0.0;
+//	float xend = 0.0;
+//	float yend = 0.0;
+//	float temp = 0.0;
+//
+//	int wav_length = in_dataArray.size();
+//	float x_stepsize;
+//	x_stepsize = 2.0 / wav_length;	// 根据数据长度计算步长，使得绘制数据水平铺满（-1~1）
+//	for (i; i < wav_length; i++)
+//	{
+//		xstart = xstart + x_stepsize;
+//		ystart = temp;
+//		xend = xstart + x_stepsize;
+//
+//		yend = in_dataArray[i];
+//
+//		glVertex2f(xstart, ystart);	// 折线起点
+//		glVertex2f(xend, yend);		// 折现终点
+//
+//		temp = yend;    //终点作为下一次的起点
+//	}
+//
+//	glEnd();
+//}
 
 /*-----------------------------------------------------------------
 // 输入：语音信号in_array，窗函数win，帧移frame_shift
@@ -658,58 +658,58 @@ std::vector<double> window(int window_length, string window_type)
 // 日期：
 // 版本：
 -----------------------------------------------------------------*/
-std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs)
-{
-	int source_len, target_len;
-	double duration;	// 序列时长初始化（秒）
-	double resample_stepsize = (double)source_fs / target_fs;	// 重采样序列自变量步长
-	double leftBound = 0, rightBound = 0;	//边界导数
-
-	source_len = in_array.size();		// 已知序列长度
-	std::vector<double> source_x(source_len);	// 已知序列自变量初始化
-	std::iota(source_x.begin(), source_x.end(), 0);	// 递增序列
-													// vector ---> array
-	double *x0 = new double[source_len];	// 已知序列自变量数组初始化
-	if (!source_x.empty())
-	{
-		memcpy(x0, &source_x[0], source_len * sizeof(double));	// 赋值
-	}
-	double *y0 = new double[source_len];	// 已知序列因变量数组初始化
-	if (!in_array.empty())
-	{
-		memcpy(y0, &in_array[0], source_len * sizeof(double));
-	}
-	Spline sp(x0, y0, source_len, GivenSecondOrder, leftBound, rightBound);
-	duration = double(source_len) / source_fs;
-	target_len = floor(duration * target_fs);	// 重采样后序列长度
-	std::vector<double> target_x(target_len);	// 初始化重采样后序列自变量
-	std::vector<double> target_y(target_len);	// 初始化重采样后序列自变量
-	std::iota(target_x.begin(), target_x.end(), 0);	// 递增序列
-	double *x = new double[target_len];	// 重采样后序列自变量数组初始化
-	double *y = new double[target_len];	// 重采样后序列因变量数组初始化
-	if (!target_x.empty())
-	{
-		memcpy(x, &target_x[0], target_len * sizeof(double));	// 重采样序列自变量索引
-	}
-	for (int i = 0; i < target_len; i++)
-	{
-		x[i] *= resample_stepsize;		// 实际重采样自变量序列
-		if (x[i] > x0[source_len - 1])
-		{
-			x[i] = x0[source_len - 1];
-		}
-	}
-	if (!target_y.empty())
-	{
-		memcpy(y, &target_y[0], target_len * sizeof(double));
-	}
-
-	sp.MultiPointInterp(x, target_len, y);			//插值结果
-
-	vector<double> target_vec(y, y + target_len);
-
-	return target_vec;
-}
+//std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs)
+//{
+//	int source_len, target_len;
+//	double duration;	// 序列时长初始化（秒）
+//	double resample_stepsize = (double)source_fs / target_fs;	// 重采样序列自变量步长
+//	double leftBound = 0, rightBound = 0;	//边界导数
+//
+//	source_len = in_array.size();		// 已知序列长度
+//	std::vector<double> source_x(source_len);	// 已知序列自变量初始化
+//	std::iota(source_x.begin(), source_x.end(), 0);	// 递增序列
+//													// vector ---> array
+//	double *x0 = new double[source_len];	// 已知序列自变量数组初始化
+//	if (!source_x.empty())
+//	{
+//		memcpy(x0, &source_x[0], source_len * sizeof(double));	// 赋值
+//	}
+//	double *y0 = new double[source_len];	// 已知序列因变量数组初始化
+//	if (!in_array.empty())
+//	{
+//		memcpy(y0, &in_array[0], source_len * sizeof(double));
+//	}
+//	Spline sp(x0, y0, source_len, GivenSecondOrder, leftBound, rightBound);
+//	duration = double(source_len) / source_fs;
+//	target_len = floor(duration * target_fs);	// 重采样后序列长度
+//	std::vector<double> target_x(target_len);	// 初始化重采样后序列自变量
+//	std::vector<double> target_y(target_len);	// 初始化重采样后序列自变量
+//	std::iota(target_x.begin(), target_x.end(), 0);	// 递增序列
+//	double *x = new double[target_len];	// 重采样后序列自变量数组初始化
+//	double *y = new double[target_len];	// 重采样后序列因变量数组初始化
+//	if (!target_x.empty())
+//	{
+//		memcpy(x, &target_x[0], target_len * sizeof(double));	// 重采样序列自变量索引
+//	}
+//	for (int i = 0; i < target_len; i++)
+//	{
+//		x[i] *= resample_stepsize;		// 实际重采样自变量序列
+//		if (x[i] > x0[source_len - 1])
+//		{
+//			x[i] = x0[source_len - 1];
+//		}
+//	}
+//	if (!target_y.empty())
+//	{
+//		memcpy(y, &target_y[0], target_len * sizeof(double));
+//	}
+//
+//	sp.MultiPointInterp(x, target_len, y);			//插值结果
+//
+//	vector<double> target_vec(y, y + target_len);
+//
+//	return target_vec;
+//}
 
 /*-----------------------------------------------------------------
 // 输入：语音信号y，采样率fs，存储地址filepath

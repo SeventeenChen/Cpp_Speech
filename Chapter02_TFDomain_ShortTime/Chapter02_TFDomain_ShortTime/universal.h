@@ -16,16 +16,16 @@
 #include <vector>
 #include <numeric>
 #include <tuple>
-#include <GLFW/glfw3.h>
+// #include <GLFW/glfw3.h>
 #include <fstream>
 #include <iostream>
 #include <cstdint>
 #include <memory>
 #include <sstream>
 #include <algorithm>
-#include "spline.h"
+// #include "spline.h"
 using namespace std;
-using namespace SplineSpace;
+// using namespace SplineSpace;
 
 typedef char CHAR;
 typedef unsigned long DWORD;
@@ -150,7 +150,7 @@ void GetInputData(std::vector<double> &in_dataArray, std::vector<double>&out_dat
 // 日期：
 // 版本：
 -----------------------------------------------------------------*/
-int GLFWPlot(std::vector<double> in_dataArray, const char *title);
+// int GLFWPlot(std::vector<double> in_dataArray, const char *title);
 
 /*-----------------------------------------------------------------
 // 输入：待绘制数据（vector）
@@ -166,7 +166,7 @@ int GLFWPlot(std::vector<double> in_dataArray, const char *title);
 // 日期：
 // 版本：
 -----------------------------------------------------------------*/
-void audioplot(std::vector<double> in_dataArray);
+// void audioplot(std::vector<double> in_dataArray);
 
 /*-----------------------------------------------------------------
 // 输入：语音信号in_array，窗函数win，帧移frame_shift
@@ -212,7 +212,7 @@ std::vector<double> window(int window_length, string window_type);
 // 日期：
 // 版本：
 -----------------------------------------------------------------*/
-std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs);
+// std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs);
 
 // Format chunk data field
 struct Wave_format {

@@ -20,7 +20,9 @@
 #include "fftw3.h"		// 配置：https://blog.csdn.net/Aubrey_yt/article/details/102974019 , 三个dll文件也需要移动到代码目录下	
 #include <windows.h>
 using namespace std;
-
+// fftw3 与 glfw会冲突，使用时暂时需要把audioplot，GLFWPlot相关部分注释
+// 配置属性部分 - 链接器 - 输入 ： glfw3.lib, glfw3dll.lib, opengl32.lib 删除
+// fftw3 与 spline会冲突，resample函数注释
 /*-----------------------------------------------------------------
 // 输入：需要进行短时傅里叶变换的信号in_array，窗函数win，弗里有人变换窗长nfft(>=窗函数长度)，帧移inc
 // 输出：短时傅里叶变换数组的实部和虚部：(nfft/2+1) x 帧数
