@@ -1,48 +1,48 @@
-/*----------------------------------------------------------------
+ï»¿/*----------------------------------------------------------------
 // Copyright (C) SeventeenChen
 // License:MIT
-// ÎÄ¼şÃû£ºuniversal.cpp
-// ÎÄ¼ş¹¦ÄÜÃèÊö£ºÓïÒôĞÅºÅµÄÍ¨ÓÃ²Ù×÷£¨¶ÁĞ´¡¢ÖØ²ÉÑù¡¢»æÖÆ²¨ĞÎ¡¢¼Ó´°·ÖÖ¡£©
-// ´´½¨Õß£ºSeventeenChen
-// Ê±¼ä£º2021/12/21
-// ĞŞ¸ÄÈË£º
-// Ê±¼ä£º
-// ĞŞ¸ÄËµÃ÷£º
-// Èí¼ş°æ±¾£ºVS2015
+// æ–‡ä»¶åï¼šuniversal.cpp
+// æ–‡ä»¶åŠŸèƒ½æè¿°ï¼šè¯­éŸ³ä¿¡å·çš„é€šç”¨æ“ä½œï¼ˆè¯»å†™ã€é‡é‡‡æ ·ã€ç»˜åˆ¶æ³¢å½¢ã€åŠ çª—åˆ†å¸§ï¼‰
+// åˆ›å»ºè€…ï¼šSeventeenChen
+// æ—¶é—´ï¼š2021/12/21
+// ä¿®æ”¹äººï¼š
+// æ—¶é—´ï¼š
+// ä¿®æ”¹è¯´æ˜ï¼š
+// è½¯ä»¶ç‰ˆæœ¬ï¼šVS2015
 //----------------------------------------------------------------*/
 
 #include "universal.h"
-// #include "spline.h"
+
 /*-----------------------------------------------------------------
-// ÊäÈë£º
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºÀàµÄ¹¹Ôìº¯Êı
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼š
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šç±»çš„æ„é€ å‡½æ•°
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-CWave::CWave()	//¹¹Ôìº¯Êı
+CWave::CWave()	//æ„é€ å‡½æ•°
 {
 	SetWave();
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÀàµÄ³£Á¿ÒıÓÃ
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºÀàµÄ¿½±´¹¹Ôìº¯Êı
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šç±»çš„å¸¸é‡å¼•ç”¨
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šç±»çš„æ‹·è´æ„é€ å‡½æ•°
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-CWave::CWave(const CWave &wave)	//¿½±´¹¹Ôìº¯Êı
+CWave::CWave(const CWave &wave)	//æ‹·è´æ„é€ å‡½æ•°
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -53,7 +53,7 @@ CWave::CWave(const CWave &wave)	//¿½±´¹¹Ôìº¯Êı
 	}
 	m_wave.dwRiffSize = wave.m_wave.dwRiffSize;
 	m_wave.dwFmtSize = wave.m_wave.dwFmtSize;
-	m_wave.wFormatTag = wave.m_wave.wFormatTag;	// WAVE_FORMAT_PCM;//ÒôÆµ¸ñÊ½ .wav
+	m_wave.wFormatTag = wave.m_wave.wFormatTag;	// WAVE_FORMAT_PCM;//éŸ³é¢‘æ ¼å¼ .wav
 	m_wave.wChannels = wave.m_wave.wChannels;
 	m_wave.SampleRate = wave.m_wave.SampleRate;
 	m_wave.ByteRate = wave.m_wave.ByteRate;
@@ -67,28 +67,28 @@ CWave::CWave(const CWave &wave)	//¿½±´¹¹Ôìº¯Êı
 	for (int i = 0; i < int(m_wave.dwDataSize /
 		(m_wave.wBitsPerSample / 8)); i++)
 	{
-		m_dataArray[i] = wave.m_dataArray[i];  //Êµ¼ÊÊı¾İ´æ·ÅÇø ÎªÖ¸Õı£¬ ÊıÁ¿ÎªdwDataSize
+		m_dataArray[i] = wave.m_dataArray[i];  //å®é™…æ•°æ®å­˜æ”¾åŒº ä¸ºæŒ‡æ­£ï¼Œ æ•°é‡ä¸ºdwDataSize
 	}
 
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÀàµÄ³£Á¿ÒıÓÃ
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºÔËËã·ûÖØÔØ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šç±»çš„å¸¸é‡å¼•ç”¨
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šè¿ç®—ç¬¦é‡è½½
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 CWave & CWave::operator=(const CWave &wave)
 {
-	if (this == &wave)//±ÜÃâ×ÔÎÒ¸³Öµ£¬ÊÍ·ÅÄÚ´æ½«´íÎó
+	if (this == &wave)//é¿å…è‡ªæˆ‘èµ‹å€¼ï¼Œé‡Šæ”¾å†…å­˜å°†é”™è¯¯
 		return *this;
-	//delete[] m_dataArray;//ÊÍ·ÅÄÚ´æ
+	//delete[] m_dataArray;//é‡Šæ”¾å†…å­˜
 	for (int i = 0; i < 4; i++)
 	{
 		m_wave.szRiffID[i] = wave.m_wave.szRiffID[i];
@@ -98,7 +98,7 @@ CWave & CWave::operator=(const CWave &wave)
 	}
 	m_wave.dwRiffSize = wave.m_wave.dwRiffSize;
 	m_wave.dwFmtSize = wave.m_wave.dwFmtSize;
-	m_wave.wFormatTag = wave.m_wave.wFormatTag;// WAVE_FORMAT_PCM;//ÒôÆµ¸ñÊ½ .wav
+	m_wave.wFormatTag = wave.m_wave.wFormatTag;// WAVE_FORMAT_PCM;//éŸ³é¢‘æ ¼å¼ .wav
 	m_wave.wChannels = wave.m_wave.wChannels;
 	m_wave.SampleRate = wave.m_wave.SampleRate;
 	m_wave.ByteRate = wave.m_wave.ByteRate;
@@ -111,22 +111,22 @@ CWave & CWave::operator=(const CWave &wave)
 	for (int i = 0; i < int(m_wave.dwDataSize /
 		(m_wave.wBitsPerSample / 8)); i++)
 	{
-		m_dataArray[i] = wave.m_dataArray[i];  //Êµ¼ÊÊı¾İ´æ·ÅÇø ÎªÖ¸Õı£¬ ÊıÁ¿ÎªdwDataSize
+		m_dataArray[i] = wave.m_dataArray[i];  //å®é™…æ•°æ®å­˜æ”¾åŒº ä¸ºæŒ‡æ­£ï¼Œ æ•°é‡ä¸ºdwDataSize
 	}
 	return *this;
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºÎö¹¹º¯Êı
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼š
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šææ„å‡½æ•°
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 CWave::~CWave()
 {
@@ -134,16 +134,16 @@ CWave::~CWave()
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º¶ÔifstreamÀàĞÍ±äÁ¿fileµÄÒıÓÃ
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£º¶ÁÈ¡ÓïÒôÎÄ¼şµ½ÄÚ´æ£¬·ÖÎªÎÄ¼şÍ·ºÍÒôÆµÊı¾İ£¬¶ÔÒôÆµÊı¾İ½øĞĞ×îÖµ¹éÒ»»¯
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šå¯¹ifstreamç±»å‹å˜é‡fileçš„å¼•ç”¨
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šè¯»å–è¯­éŸ³æ–‡ä»¶åˆ°å†…å­˜ï¼Œåˆ†ä¸ºæ–‡ä»¶å¤´å’ŒéŸ³é¢‘æ•°æ®ï¼Œå¯¹éŸ³é¢‘æ•°æ®è¿›è¡Œæœ€å€¼å½’ä¸€åŒ–
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 void CWave::read(string file)
 {
@@ -208,8 +208,8 @@ void CWave::read(string file)
 		Binary2Int(m_wave.dwDataSize, reinterpret_cast<unsigned char*>(&buf_byte), 4);
 		memset(buf_byte, '\0', sizeof(buf_byte));
 
-		//Êı¾İÇøĞ´
-		int ndata = m_wave.dwDataSize / (m_wave.wBitsPerSample / 8);	// ²ÉÑùµãÊı
+		//æ•°æ®åŒºå†™
+		int ndata = m_wave.dwDataSize / (m_wave.wBitsPerSample / 8);	// é‡‡æ ·ç‚¹æ•°
 		m_dataArray.resize(ndata);
 		CHAR temp_byte[1];
 		CHAR temp_short[2];
@@ -235,22 +235,23 @@ void CWave::read(string file)
 
 	}
 
-	Normalization();//¹éÒ»»¯Îª-1~1
+	Normalization();//å½’ä¸€åŒ–ä¸º-1~1
 
 }
+
 /*-----------------------------------------------------------------
-// ÊäÈë£º
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£º¹¹Ôìº¯ÊıµÄ¶¨Òå
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼š
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šæ„é€ å‡½æ•°çš„å®šä¹‰
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-void CWave::SetWave()		// ¶¨ÒåÊ¶±ğ×Ö
+void CWave::SetWave()		// å®šä¹‰è¯†åˆ«å­—
 {
 	m_wave.szRiffID[0] = 'R'; m_wave.szRiffID[1] = 'I';
 	m_wave.szRiffID[2] = 'F'; m_wave.szRiffID[3] = 'F';
@@ -265,7 +266,7 @@ void CWave::SetWave()		// ¶¨ÒåÊ¶±ğ×Ö
 
 	//dwFmtSize;
 	m_wave.wFormatTag = 1;	// WAVE_FORMAT_PCM
-	m_wave.wChannels = 1;	//Ä¬ÈÏÎªµ¥Í¨µÀ
+	m_wave.wChannels = 1;	//é»˜è®¤ä¸ºå•é€šé“
 
 							//data chunk
 	m_wave.szDataID[0] = 'd'; m_wave.szDataID[1] = 'a';
@@ -276,18 +277,18 @@ void CWave::SetWave()		// ¶¨ÒåÊ¶±ğ×Ö
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º×ª»»½á¹ûresultµÄÒıÓÃ£¬ÊäÈë×Ö½ÚÖ¸Õëch£¬×Ö½ÚÎ»ÊıM
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£º2½øÖÆch×ªintÀàĞÍ±äÁ¿result
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šè½¬æ¢ç»“æœresultçš„å¼•ç”¨ï¼Œè¾“å…¥å­—èŠ‚æŒ‡é’ˆchï¼Œå­—èŠ‚ä½æ•°M
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼š2è¿›åˆ¶chè½¬intç±»å‹å˜é‡result
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-template<typename DataType>  //Ä£°åÉùÃ÷£¬ÆäÖĞTÎªÀàĞÍ²ÎÊı
+template<typename DataType>  //æ¨¡æ¿å£°æ˜ï¼Œå…¶ä¸­Tä¸ºç±»å‹å‚æ•°
 void CWave::Binary2Int(DataType &result, BYTE *ch, int M)
 {
 	result = 0;
@@ -300,28 +301,28 @@ void CWave::Binary2Int(DataType &result, BYTE *ch, int M)
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºÒôÆµÊı¾İµÄ×îÖµ¹éÒ»»¯
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼š
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šéŸ³é¢‘æ•°æ®çš„æœ€å€¼å½’ä¸€åŒ–
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 void CWave::Normalization()
 {
-	int ndata = m_wave.dwDataSize / (m_wave.wBitsPerSample / 8);	// ²ÉÑùµãÊı
-	if (m_wave.wBitsPerSample == 16)		// 16Î»´æ´¢
+	int ndata = m_wave.dwDataSize / (m_wave.wBitsPerSample / 8);	// é‡‡æ ·ç‚¹æ•°
+	if (m_wave.wBitsPerSample == 16)		// 16ä½å­˜å‚¨
 	{
 		for (int i = 0; i < ndata; i++)
 		{
 			m_dataArray[i] = m_dataArray[i] / max_16_bits;
 		}
 	}
-	else    // 8Î»´æ´¢   
+	else    // 8ä½å­˜å‚¨   
 	{
 		for (int i = 0; i < ndata; i++)
 		{
@@ -332,16 +333,16 @@ void CWave::Normalization()
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º
-// Êä³ö£ºwavÎÄ¼şÍ·ÖĞÏà¹Ø²ÎÊı
-// ¹¦ÄÜÃèÊö£º¿ØÖÆÌ¨ÏÔÊ¾wavÎÄ¼şÍ·Êı¾İ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼š
+// è¾“å‡ºï¼šwavæ–‡ä»¶å¤´ä¸­ç›¸å…³å‚æ•°
+// åŠŸèƒ½æè¿°ï¼šæ§åˆ¶å°æ˜¾ç¤ºwavæ–‡ä»¶å¤´æ•°æ®
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 void CWave::DisplayHeader()
 {
@@ -359,18 +360,18 @@ void CWave::DisplayHeader()
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºwavÎÄ¼şÃû£¨string£©£¬²ÉÑùÂÊ£¨int£©£¬ÊÇ·ñÏÔÊ¾ÎÄ¼şÍ·£¨bool£©
-// Êä³ö£ºÔÚ¿ØÖÆÌ¨´òÓ¡wavÓïÒôÍ·²ÎÊı£¬wavÒôÆµÊı¾İ£¨¹éÒ»»¯£©ÖÁÍ¬ÃûtxtÎÄ¼ş
-// ¹¦ÄÜÃèÊö£ºÓïÒôĞÅºÅµÄ¶ÁÈ¡
-// TODO£ºÍêÉÆ³É¿É¶ÁÈ¡ÏµÍ³Â·¾¶
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/06
-// ĞŞ¸ÄÈË£ºSeventeenChen
-// ¼ÇÂ¼£º¿ÉÍ¬Ê±·µ»ØÒôÆµÊı¾İÓë²ÉÑùÆµÂÊ
-// ÈÕÆÚ£º2021/12/07
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šwavæ–‡ä»¶åï¼ˆstringï¼‰ï¼Œé‡‡æ ·ç‡ï¼ˆintï¼‰ï¼Œæ˜¯å¦æ˜¾ç¤ºæ–‡ä»¶å¤´ï¼ˆboolï¼‰
+// è¾“å‡ºï¼šåœ¨æ§åˆ¶å°æ‰“å°wavè¯­éŸ³å¤´å‚æ•°ï¼ŒwavéŸ³é¢‘æ•°æ®ï¼ˆå½’ä¸€åŒ–ï¼‰è‡³åŒåtxtæ–‡ä»¶
+// åŠŸèƒ½æè¿°ï¼šè¯­éŸ³ä¿¡å·çš„è¯»å–
+// TODOï¼šå®Œå–„æˆå¯è¯»å–ç³»ç»Ÿè·¯å¾„
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/06
+// ä¿®æ”¹äººï¼šSeventeenChen
+// è®°å½•ï¼šå¯åŒæ—¶è¿”å›éŸ³é¢‘æ•°æ®ä¸é‡‡æ ·é¢‘ç‡
+// æ—¥æœŸï¼š2021/12/07
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::tuple<vector <double>, int> audioread(string filepath, int fs, bool disp_flag)
 {
@@ -378,7 +379,7 @@ std::tuple<vector <double>, int> audioread(string filepath, int fs, bool disp_fl
 	std::tuple<vector <double>, int> in_data;
 	std::vector<double> in_array;
 
-	in_data = GetFileData(filepath, fs, disp_flag);	// ´ÓÎÄ¼ş¶ÁÈ¡ÒôÆµÊı¾İ
+	in_data = GetFileData(filepath, fs, disp_flag);	// ä»æ–‡ä»¶è¯»å–éŸ³é¢‘æ•°æ®
 	in_array = std::get<0>(in_data);
 	fs = std::get<1>(in_data);
 
@@ -397,18 +398,18 @@ std::tuple<vector <double>, int> audioread(string filepath, int fs, bool disp_fl
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÎÄ¼şÃû£¬²ÉÑùÆµÂÊ£¨ÈÎÒâintÀàĞÍ£©£¬ÏÔÊ¾Í·ÎÄ¼ş±ê¼Ç£¨boolĞÍ£©
-// Êä³ö£ºtupleĞÍ£¨ÒôÆµÊı¾İ, Êµ¼Ê²ÉÑùÆµÂÊ£©
-// ¹¦ÄÜÃèÊö£º¶ÁÈ¡wavÎÄ¼şÖÁÄÚ´æ£¬ÌáÈ¡ÒôÆµÊı¾İ¼°²ÉÑùÆµÂÊ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£ºSeventeenChen
-// ¼ÇÂ¼£º¿ÉÍ¬Ê±·µ»ØÒôÆµÊı¾İÓë²ÉÑùÆµÂÊ
-// ÈÕÆÚ£º2021/12/07
-// ĞŞ¸ÄÈË£ºSeventeenChen
-// ¼ÇÂ¼£ºÔö¼ÓÎÄ¼ş²»ÄÜ´ò¿ªÊ±µÄÅ×³öÒì³£
-// ÈÕÆÚ£º2021/12/08
-// °æ±¾£º
+// è¾“å…¥ï¼šæ–‡ä»¶åï¼Œé‡‡æ ·é¢‘ç‡ï¼ˆä»»æ„intç±»å‹ï¼‰ï¼Œæ˜¾ç¤ºå¤´æ–‡ä»¶æ ‡è®°ï¼ˆboolå‹ï¼‰
+// è¾“å‡ºï¼štupleå‹ï¼ˆéŸ³é¢‘æ•°æ®, å®é™…é‡‡æ ·é¢‘ç‡ï¼‰
+// åŠŸèƒ½æè¿°ï¼šè¯»å–wavæ–‡ä»¶è‡³å†…å­˜ï¼Œæå–éŸ³é¢‘æ•°æ®åŠé‡‡æ ·é¢‘ç‡
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼šSeventeenChen
+// è®°å½•ï¼šå¯åŒæ—¶è¿”å›éŸ³é¢‘æ•°æ®ä¸é‡‡æ ·é¢‘ç‡
+// æ—¥æœŸï¼š2021/12/07
+// ä¿®æ”¹äººï¼šSeventeenChen
+// è®°å½•ï¼šå¢åŠ æ–‡ä»¶ä¸èƒ½æ‰“å¼€æ—¶çš„æŠ›å‡ºå¼‚å¸¸
+// æ—¥æœŸï¼š2021/12/08
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::tuple<vector<double>, int> GetFileData(string file, int fs, bool disp_flag)
 {
@@ -417,49 +418,49 @@ std::tuple<vector<double>, int> GetFileData(string file, int fs, bool disp_flag)
 
 	if (!ifs)
 	{
-		throw "File could not be opened";		// Òì³£´¦Àí
+		throw "File could not be opened";		// å¼‚å¸¸å¤„ç†
 		return make_tuple(std::vector<double>(0), 0);
 	}
 	else
 	{
-		wave.read(file);	// ¶ÁÈëwavÎÄ¼ş
+		wave.read(file);	// è¯»å…¥wavæ–‡ä»¶
 		if (disp_flag)
 		{
 			std::cout << "wav header: " << endl;
 			wave.DisplayHeader();
 		}
 		ifs.close();
-		fs = int(wave.m_wave.SampleRate);	// ¶ÁÈ¡²ÉÑùÂÊ
-		std::vector<double> in_dataArray;	// ¶ÁÈëÒôÆµÊı¾İ
-		GetInputData(wave.m_dataArray, in_dataArray, wave.m_wave.wChannels);	// È¡µ¥Í¨µÀ
+		fs = int(wave.m_wave.SampleRate);	// è¯»å–é‡‡æ ·ç‡
+		std::vector<double> in_dataArray;	// è¯»å…¥éŸ³é¢‘æ•°æ®
+		GetInputData(wave.m_dataArray, in_dataArray, wave.m_wave.wChannels);	// å–å•é€šé“
 		return make_tuple(in_dataArray, fs);
 	}
 
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º¶ÁÈëÊı¾İ£¬Êä³öÊı¾İ£¨¶¯Ì¬Êı×éµÄÒıÓÃ£©£»Í¨µÀÊı±ê¼Çflag
-// Êä³ö£ºµ¥Í¨µÀÒôÆµÊı¾İ
-// ¹¦ÄÜÃèÊö£º¶ÁÈ¡wavÎÄ¼ş£¬Èç¹ûÊÇË«Í¨µÀÒôÆµ£¬Ö»È¡×óÉùµÀ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šè¯»å…¥æ•°æ®ï¼Œè¾“å‡ºæ•°æ®ï¼ˆåŠ¨æ€æ•°ç»„çš„å¼•ç”¨ï¼‰ï¼›é€šé“æ•°æ ‡è®°flag
+// è¾“å‡ºï¼šå•é€šé“éŸ³é¢‘æ•°æ®
+// åŠŸèƒ½æè¿°ï¼šè¯»å–wavæ–‡ä»¶ï¼Œå¦‚æœæ˜¯åŒé€šé“éŸ³é¢‘ï¼Œåªå–å·¦å£°é“
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 void GetInputData(std::vector<double> &in_dataArray, std::vector<double>&out_dataArray, int flag)
 {
 	int nDataLength = in_dataArray.size();
-	int nSampleLength = 0;//Ñù±¾³¤¶È
+	int nSampleLength = 0;//æ ·æœ¬é•¿åº¦
 	if (2 == flag)
 	{
 		nSampleLength = nDataLength / 2;
 		out_dataArray.resize(nSampleLength);
 		for (int i = 0; i < nSampleLength; i++)
 		{
-			out_dataArray[i] = in_dataArray[2 * i];//È¡×óÉùµÀ
+			out_dataArray[i] = in_dataArray[2 * i];//å–å·¦å£°é“
 		}
 	}
 
@@ -472,131 +473,131 @@ void GetInputData(std::vector<double> &in_dataArray, std::vector<double>&out_dat
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÒôÆµÊı¾İ£¨vector£©£¬Í¼Ïñ±êÌâ£¨string£©
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºÀûÓÃopenGL»æÖÆÒôÆµ²¨ĞÎ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/08
-// ĞŞ¸ÄÈË£ºSeventeenChen
-// ¼ÇÂ¼£ºÌí¼Ótitle±ê¼Ç
-// ÈÕÆÚ£º2021/12/10
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šéŸ³é¢‘æ•°æ®ï¼ˆvectorï¼‰ï¼Œå›¾åƒæ ‡é¢˜ï¼ˆstringï¼‰
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šåˆ©ç”¨openGLç»˜åˆ¶éŸ³é¢‘æ³¢å½¢
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/08
+// ä¿®æ”¹äººï¼šSeventeenChen
+// è®°å½•ï¼šæ·»åŠ titleæ ‡è®°
+// æ—¥æœŸï¼š2021/12/10
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-//int GLFWPlot(std::vector<double> in_dataArray, const char *title)
-//{
-//	GLFWwindow* window;
-//
-//	/* Initialize the library */
-//	if (!glfwInit())
-//		return -1;
-//
-//	/* Create a windowed mode window and its OpenGL context */
-//	window = glfwCreateWindow(800, 800, title, NULL, NULL);
-//	if (!window)
-//	{
-//		glfwTerminate();
-//		return -1;
-//	}
-//
-//	/* Make the window's context current */
-//	glfwMakeContextCurrent(window);
-//
-//	/* Loop until the user closes the window */
-//	while (!glfwWindowShouldClose(window))
-//	{
-//
-//		/*your draw*/
-//		audioplot(in_dataArray);
-//
-//		/* Swap front and back buffers */
-//		glfwSwapBuffers(window);
-//
-//		/* Poll for and process events */
-//		glfwPollEvents();
-//	}
-//
-//	glfwTerminate();
-//
-//	return 0;
-//
-//}
+int GLFWPlot(std::vector<double> in_dataArray, const char *title)
+{
+	GLFWwindow* window;
+
+	/* Initialize the library */
+	if (!glfwInit())
+		return -1;
+
+	/* Create a windowed mode window and its OpenGL context */
+	window = glfwCreateWindow(800, 800, title, NULL, NULL);
+	if (!window)
+	{
+		glfwTerminate();
+		return -1;
+	}
+
+	/* Make the window's context current */
+	glfwMakeContextCurrent(window);
+
+	/* Loop until the user closes the window */
+	while (!glfwWindowShouldClose(window))
+	{
+
+		/*your draw*/
+		audioplot(in_dataArray);
+
+		/* Swap front and back buffers */
+		glfwSwapBuffers(window);
+
+		/* Poll for and process events */
+		glfwPollEvents();
+	}
+
+	glfwTerminate();
+
+	return 0;
+
+}
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÒôÆµÊı¾İ
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºÀûÓÃopenGL»æÖÆÒôÆµ²¨ĞÎ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/08
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šéŸ³é¢‘æ•°æ®
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šåˆ©ç”¨openGLç»˜åˆ¶éŸ³é¢‘æ³¢å½¢
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/08
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-//void audioplot(std::vector<double> in_dataArray)
-//{
-//	glClearColor(0.8, 0.8, 0.8, 0.8);	// ´°¿Úµ×É«
-//	glClear(GL_COLOR_BUFFER_BIT);
-//
-//	glLineWidth(2);		//ÉèÖÃÏß¶Î¿í¶È
-//	glBegin(GL_LINES);
-//	glColor3f(0.0, 0.0, 1.0);	// Ïß¶ÎÑÕÉ«
-//
-//	int i = 0;
-//	float xstart = -1.0;
-//	float ystart = 0.0;
-//	float xend = 0.0;
-//	float yend = 0.0;
-//	float temp = 0.0;
-//
-//	int wav_length = in_dataArray.size();
-//	float x_stepsize;
-//	x_stepsize = 2.0 / wav_length;	// ¸ù¾İÊı¾İ³¤¶È¼ÆËã²½³¤£¬Ê¹µÃ»æÖÆÊı¾İË®Æ½ÆÌÂú£¨-1~1£©
-//	for (i; i < wav_length; i++)
-//	{
-//		xstart = xstart + x_stepsize;
-//		ystart = temp;
-//		xend = xstart + x_stepsize;
-//
-//		yend = in_dataArray[i];
-//
-//		glVertex2f(xstart, ystart);	// ÕÛÏßÆğµã
-//		glVertex2f(xend, yend);		// ÕÛÏÖÖÕµã
-//
-//		temp = yend;    //ÖÕµã×÷ÎªÏÂÒ»´ÎµÄÆğµã
-//	}
-//
-//	glEnd();
-//}
+void audioplot(std::vector<double> in_dataArray)
+{
+	glClearColor(0.8, 0.8, 0.8, 0.8);	// çª—å£åº•è‰²
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	glLineWidth(2);		//è®¾ç½®çº¿æ®µå®½åº¦
+	glBegin(GL_LINES);
+	glColor3f(0.0, 0.0, 1.0);	// çº¿æ®µé¢œè‰²
+
+	int i = 0;
+	float xstart = -1.0;
+	float ystart = 0.0;
+	float xend = 0.0;
+	float yend = 0.0;
+	float temp = 0.0;
+
+	int wav_length = in_dataArray.size();
+	float x_stepsize;
+	x_stepsize = 2.0 / wav_length;	// æ ¹æ®æ•°æ®é•¿åº¦è®¡ç®—æ­¥é•¿ï¼Œä½¿å¾—ç»˜åˆ¶æ•°æ®æ°´å¹³é“ºæ»¡ï¼ˆ-1~1ï¼‰
+	for (i; i < wav_length; i++)
+	{
+		xstart = xstart + x_stepsize;
+		ystart = temp;
+		xend = xstart + x_stepsize;
+
+		yend = in_dataArray[i];
+
+		glVertex2f(xstart, ystart);	// æŠ˜çº¿èµ·ç‚¹
+		glVertex2f(xend, yend);		// æŠ˜ç°ç»ˆç‚¹
+
+		temp = yend;    //ç»ˆç‚¹ä½œä¸ºä¸‹ä¸€æ¬¡çš„èµ·ç‚¹
+	}
+
+	glEnd();
+}
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÓïÒôĞÅºÅin_array£¬´°º¯Êıwin£¬Ö¡ÒÆframe_shift
-// Êä³ö£º·ÖÖ¡ºóÊı×é£¬Ö¡Êı x Ö¡³¤
-// ¹¦ÄÜÃèÊö£º¼Ó´°·ÖÖ¡
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/09
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šè¯­éŸ³ä¿¡å·in_arrayï¼Œçª—å‡½æ•°winï¼Œå¸§ç§»frame_shift
+// è¾“å‡ºï¼šåˆ†å¸§åæ•°ç»„ï¼Œå¸§æ•° x å¸§é•¿
+// åŠŸèƒ½æè¿°ï¼šåŠ çª—åˆ†å¸§
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/09
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::vector<vector<double> > enframe(vector<double> in_array, vector<double> win, int frame_shift)
 {
 	int len_x, len_win, frame_num;
 
-	len_x = in_array.size();	// Êı¾İ³¤¶È
-	len_win = win.size();		// ´°³¤£¨Ö¡³¤£©
+	len_x = in_array.size();	// æ•°æ®é•¿åº¦
+	len_win = win.size();		// çª—é•¿ï¼ˆå¸§é•¿ï¼‰
 	if (frame_shift == 0)
 	{
-		frame_shift = len_win;		// ÈôÎ´ÉèÖÃÖ¡ÒÆ£¬ÔòÖ¡ÒÆ=Ö¡³¤
+		frame_shift = len_win;		// è‹¥æœªè®¾ç½®å¸§ç§»ï¼Œåˆ™å¸§ç§»=å¸§é•¿
 	}
-	frame_num = (len_x - len_win + frame_shift) / frame_shift;	// Ö¡Êı
-																// ³õÊ¼»¯·ÖÖ¡ºóÊı×é£ºÖ¡Êı x Ö¡³¤
+	frame_num = (len_x - len_win + frame_shift) / frame_shift;	// å¸§æ•°
+																// åˆå§‹åŒ–åˆ†å¸§åæ•°ç»„ï¼šå¸§æ•° x å¸§é•¿
 	vector<vector<double> >f(frame_num, vector<double>(len_win));
 	for (int i = 0; i < frame_num; i++)
 	{
@@ -610,17 +611,17 @@ std::vector<vector<double> > enframe(vector<double> in_array, vector<double> win
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º´°³¤£¨int£©£¬´°ÀàĞÍ£º¾ØĞÎ"default"/ººÃ÷"hamming"/ººÄş"hanning"
-// Êä³ö£º´°º¯Êı£¨vector£©
-// ¹¦ÄÜÃèÊö£º´°º¯Êı¸³Öµ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/09
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šçª—é•¿ï¼ˆintï¼‰ï¼Œçª—ç±»å‹ï¼šçŸ©å½¢"default"/æ±‰æ˜"hamming"/æ±‰å®"hanning"
+// è¾“å‡ºï¼šçª—å‡½æ•°ï¼ˆvectorï¼‰
+// åŠŸèƒ½æè¿°ï¼šçª—å‡½æ•°èµ‹å€¼
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/09
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::vector<double> window(int window_length, string window_type)
 {
@@ -645,121 +646,121 @@ std::vector<double> window(int window_length, string window_type)
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º´ıÖØ²ÉÑùĞÅºÅ£¨Ò»Î¬Êı×é vector£©£¬Ä¿±ê²ÉÑùÂÊ£¬Ô­Ê¼²ÉÑùÂÊ
-// Êä³ö£ºÖØ²ÉÑùºóĞÅºÅ£¨Ò»Î¬Êı×é vector£©
-// ¹¦ÄÜÃèÊö£ºÒ»Î¬ĞÅºÅµÄÖØ²ÉÑù
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/11
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// °æ±¾£º
+// è¾“å…¥ï¼šå¾…é‡é‡‡æ ·ä¿¡å·ï¼ˆä¸€ç»´æ•°ç»„ vectorï¼‰ï¼Œç›®æ ‡é‡‡æ ·ç‡ï¼ŒåŸå§‹é‡‡æ ·ç‡
+// è¾“å‡ºï¼šé‡é‡‡æ ·åä¿¡å·ï¼ˆä¸€ç»´æ•°ç»„ vectorï¼‰
+// åŠŸèƒ½æè¿°ï¼šä¸€ç»´ä¿¡å·çš„é‡é‡‡æ ·
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/11
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-//std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs)
-//{
-//	int source_len, target_len;
-//	double duration;	// ĞòÁĞÊ±³¤³õÊ¼»¯£¨Ãë£©
-//	double resample_stepsize = (double)source_fs / target_fs;	// ÖØ²ÉÑùĞòÁĞ×Ô±äÁ¿²½³¤
-//	double leftBound = 0, rightBound = 0;	//±ß½çµ¼Êı
-//
-//	source_len = in_array.size();		// ÒÑÖªĞòÁĞ³¤¶È
-//	std::vector<double> source_x(source_len);	// ÒÑÖªĞòÁĞ×Ô±äÁ¿³õÊ¼»¯
-//	std::iota(source_x.begin(), source_x.end(), 0);	// µİÔöĞòÁĞ
-//													// vector ---> array
-//	double *x0 = new double[source_len];	// ÒÑÖªĞòÁĞ×Ô±äÁ¿Êı×é³õÊ¼»¯
-//	if (!source_x.empty())
-//	{
-//		memcpy(x0, &source_x[0], source_len * sizeof(double));	// ¸³Öµ
-//	}
-//	double *y0 = new double[source_len];	// ÒÑÖªĞòÁĞÒò±äÁ¿Êı×é³õÊ¼»¯
-//	if (!in_array.empty())
-//	{
-//		memcpy(y0, &in_array[0], source_len * sizeof(double));
-//	}
-//	Spline sp(x0, y0, source_len, GivenSecondOrder, leftBound, rightBound);
-//	duration = double(source_len) / source_fs;
-//	target_len = floor(duration * target_fs);	// ÖØ²ÉÑùºóĞòÁĞ³¤¶È
-//	std::vector<double> target_x(target_len);	// ³õÊ¼»¯ÖØ²ÉÑùºóĞòÁĞ×Ô±äÁ¿
-//	std::vector<double> target_y(target_len);	// ³õÊ¼»¯ÖØ²ÉÑùºóĞòÁĞ×Ô±äÁ¿
-//	std::iota(target_x.begin(), target_x.end(), 0);	// µİÔöĞòÁĞ
-//	double *x = new double[target_len];	// ÖØ²ÉÑùºóĞòÁĞ×Ô±äÁ¿Êı×é³õÊ¼»¯
-//	double *y = new double[target_len];	// ÖØ²ÉÑùºóĞòÁĞÒò±äÁ¿Êı×é³õÊ¼»¯
-//	if (!target_x.empty())
-//	{
-//		memcpy(x, &target_x[0], target_len * sizeof(double));	// ÖØ²ÉÑùĞòÁĞ×Ô±äÁ¿Ë÷Òı
-//	}
-//	for (int i = 0; i < target_len; i++)
-//	{
-//		x[i] *= resample_stepsize;		// Êµ¼ÊÖØ²ÉÑù×Ô±äÁ¿ĞòÁĞ
-//		if (x[i] > x0[source_len - 1])
-//		{
-//			x[i] = x0[source_len - 1];
-//		}
-//	}
-//	if (!target_y.empty())
-//	{
-//		memcpy(y, &target_y[0], target_len * sizeof(double));
-//	}
-//
-//	sp.MultiPointInterp(x, target_len, y);			//²åÖµ½á¹û
-//
-//	vector<double> target_vec(y, y + target_len);
-//
-//	return target_vec;
-//}
+std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs)
+{
+	int source_len, target_len;
+	double duration;	// åºåˆ—æ—¶é•¿åˆå§‹åŒ–ï¼ˆç§’ï¼‰
+	double resample_stepsize = (double)source_fs / target_fs;	// é‡é‡‡æ ·åºåˆ—è‡ªå˜é‡æ­¥é•¿
+	double leftBound = 0, rightBound = 0;	//è¾¹ç•Œå¯¼æ•°
+
+	source_len = in_array.size();		// å·²çŸ¥åºåˆ—é•¿åº¦
+	std::vector<double> source_x(source_len);	// å·²çŸ¥åºåˆ—è‡ªå˜é‡åˆå§‹åŒ–
+	std::iota(source_x.begin(), source_x.end(), 0);	// é€’å¢åºåˆ—
+													// vector ---> array
+	double *x0 = new double[source_len];	// å·²çŸ¥åºåˆ—è‡ªå˜é‡æ•°ç»„åˆå§‹åŒ–
+	if (!source_x.empty())
+	{
+		memcpy(x0, &source_x[0], source_len * sizeof(double));	// èµ‹å€¼
+	}
+	double *y0 = new double[source_len];	// å·²çŸ¥åºåˆ—å› å˜é‡æ•°ç»„åˆå§‹åŒ–
+	if (!in_array.empty())
+	{
+		memcpy(y0, &in_array[0], source_len * sizeof(double));
+	}
+	Spline sp(x0, y0, source_len, GivenSecondOrder, leftBound, rightBound);
+	duration = double(source_len) / source_fs;
+	target_len = floor(duration * target_fs);	// é‡é‡‡æ ·ååºåˆ—é•¿åº¦
+	std::vector<double> target_x(target_len);	// åˆå§‹åŒ–é‡é‡‡æ ·ååºåˆ—è‡ªå˜é‡
+	std::vector<double> target_y(target_len);	// åˆå§‹åŒ–é‡é‡‡æ ·ååºåˆ—è‡ªå˜é‡
+	std::iota(target_x.begin(), target_x.end(), 0);	// é€’å¢åºåˆ—
+	double *x = new double[target_len];	// é‡é‡‡æ ·ååºåˆ—è‡ªå˜é‡æ•°ç»„åˆå§‹åŒ–
+	double *y = new double[target_len];	// é‡é‡‡æ ·ååºåˆ—å› å˜é‡æ•°ç»„åˆå§‹åŒ–
+	if (!target_x.empty())
+	{
+		memcpy(x, &target_x[0], target_len * sizeof(double));	// é‡é‡‡æ ·åºåˆ—è‡ªå˜é‡ç´¢å¼•
+	}
+	for (int i = 0; i < target_len; i++)
+	{
+		x[i] *= resample_stepsize;		// å®é™…é‡é‡‡æ ·è‡ªå˜é‡åºåˆ—
+		if (x[i] > x0[source_len - 1])
+		{
+			x[i] = x0[source_len - 1];
+		}
+	}
+	if (!target_y.empty())
+	{
+		memcpy(y, &target_y[0], target_len * sizeof(double));
+	}
+
+	sp.MultiPointInterp(x, target_len, y);			//æ’å€¼ç»“æœ
+
+	vector<double> target_vec(y, y + target_len);
+
+	return target_vec;
+}
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÓïÒôĞÅºÅy£¬²ÉÑùÂÊfs£¬´æ´¢µØÖ·filepath
-// Êä³ö£ºfilepath.wavÎÄ¼ş
-// ¹¦ÄÜÃèÊö£ºÓïÒôĞÅºÅµÄĞ´Èë´æ´¢
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/16
-// TODO£ºÏÖ½öÖ§³Ö16Î»´æ´¢£¬´ıÓÅ»¯ÖÁÆäËûÎ»Êı£¨Èç8/32µÈ£©
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šè¯­éŸ³ä¿¡å·yï¼Œé‡‡æ ·ç‡fsï¼Œå­˜å‚¨åœ°å€filepath
+// è¾“å‡ºï¼šfilepath.wavæ–‡ä»¶
+// åŠŸèƒ½æè¿°ï¼šè¯­éŸ³ä¿¡å·çš„å†™å…¥å­˜å‚¨
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/16
+// TODOï¼šç°ä»…æ”¯æŒ16ä½å­˜å‚¨ï¼Œå¾…ä¼˜åŒ–è‡³å…¶ä»–ä½æ•°ï¼ˆå¦‚8/32ç­‰ï¼‰
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 void audiowrite(vector<double> y, int fs, string filepath)
 {
-	// Write WAvÎÄ¼ş	
+	// Write WAvæ–‡ä»¶	
 	int channel_num = 1, bitrate = 16;
 	Wave_header header(channel_num, fs, bitrate);	//e.g. Wave_header header(1, 48000, 16);
-	uint32_t len_arr = y.size();				// Êı×é³¤¶È
-	uint32_t length = len_arr * bitrate / 8;	// ×Ö½ÚÊı
+	uint32_t len_arr = y.size();				// æ•°ç»„é•¿åº¦
+	uint32_t length = len_arr * bitrate / 8;	// å­—èŠ‚æ•°
 	vector<int> int_array(len_arr);
 	int16_t *data = new int16_t[length];
 
 	for (int i = 0; i < len_arr; i++)
 	{
-		int_array[i] = y[i] * 32678;	// Á¿»¯ -32768 ~ 32768	
-		data[i] = int_array[i];			// dataÖĞÃ¿¸öÊı¾İÕ¼¾İÁ½¸ö×Ö½Ú£¨16Î»£©
+		int_array[i] = y[i] * 32678;	// é‡åŒ– -32768 ~ 32768	
+		data[i] = int_array[i];			// dataä¸­æ¯ä¸ªæ•°æ®å æ®ä¸¤ä¸ªå­—èŠ‚ï¼ˆ16ä½ï¼‰
 	}
 	CWaveFile::write(filepath, header, data, length);
 
 }
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÒôÆµÊı¾İ£¨vector£©
-// Êä³ö£ºÏû³ıÖ±Á÷·ÖÁ¿ºóÒôÆµÊı¾İ£¨vector£©
-// ¹¦ÄÜÃèÊö£º¶ÔÒôÆµÊı¾İÍ³Ò»Ïû³ıÖ±Á÷Æ«ÖÃ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/22
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šéŸ³é¢‘æ•°æ®ï¼ˆvectorï¼‰
+// è¾“å‡ºï¼šæ¶ˆé™¤ç›´æµåˆ†é‡åéŸ³é¢‘æ•°æ®ï¼ˆvectorï¼‰
+// åŠŸèƒ½æè¿°ï¼šå¯¹éŸ³é¢‘æ•°æ®ç»Ÿä¸€æ¶ˆé™¤ç›´æµåç½®
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/22
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::vector<double> dc_removal(vector<double> in_array)
 {
-	double average = 0;			// Æ½¾ùÊı
-	int n = in_array.size();	// Êı×é´óĞ¡
+	double average = 0;			// å¹³å‡æ•°
+	int n = in_array.size();	// æ•°ç»„å¤§å°
 	std::vector<double> out_array(n);
 	for (int i = 0; i < n; i++)
 	{

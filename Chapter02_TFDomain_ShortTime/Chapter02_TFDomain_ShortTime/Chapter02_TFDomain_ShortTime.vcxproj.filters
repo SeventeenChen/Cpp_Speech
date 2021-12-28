@@ -18,10 +18,13 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="stftms.cpp">
+    <ClCompile Include="universal.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="universal.cpp">
+    <ClCompile Include="spline.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -31,10 +34,10 @@
     </Media>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stftms.h">
+    <ClInclude Include="universal.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="universal.h">
+    <ClInclude Include="spline.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

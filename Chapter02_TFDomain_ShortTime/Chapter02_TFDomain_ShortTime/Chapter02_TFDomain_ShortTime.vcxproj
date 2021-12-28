@@ -19,15 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="stftms.cpp" />
+    <ClCompile Include="spline.cpp" />
     <ClCompile Include="universal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stftms.h" />
+    <ClInclude Include="spline.h" />
     <ClInclude Include="universal.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -83,8 +84,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>H:\EXE\fftw-3.3.5-dll32;H:\EXE\glad\include;H:\EXE\glfw-3.3.5.bin.WIN32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>H:\EXE\fftw-3.3.5-dll32;H:\EXE\glfw-3.3.5.bin.WIN32\lib-vc2015;$(LibraryPath)</LibraryPath>
+    <IncludePath>H:\EXE\glad\include;H:\EXE\glfw-3.3.5.bin.WIN32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>H:\EXE\glfw-3.3.5.bin.WIN32\lib-vc2015;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -107,13 +108,14 @@
       </PreprocessorDefinitions>
       <CompileAs>CompileAsCpp</CompileAs>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>H:\EXE\fftw-3.3.5-dll32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libfftw3-3.lib;libfftw3f-3.lib;libfftw3l-3.lib</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;opengl32.lib;User32.lib;Gdi32.lib;shell32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>H:\EXE\glfw-3.3.5.bin.WIN32\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,13 +127,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE</PreprocessorDefinitions>
       <CompileAs>CompileAsCpp</CompileAs>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalIncludeDirectories>H:\EXE\fftw-3.3.5-dll32;E:\VsProject\Cpp_Speech\Chapter01_AduioFundamental\Chapter01_AduioFundamental;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libfftw3-3.lib;libfftw3f-3.lib;libfftw3l-3.lib</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;glfw3dll.lib;opengl32.lib</AdditionalDependencies>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
   </ItemDefinitionGroup>

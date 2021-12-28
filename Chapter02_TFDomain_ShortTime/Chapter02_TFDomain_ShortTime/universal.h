@@ -1,14 +1,14 @@
-/*----------------------------------------------------------------
+ï»¿/*----------------------------------------------------------------
 // Copyright (C) SeventeenChen
 // License:MIT
-// ÎÄ¼şÃû£ºuniversal.h
-// ÎÄ¼ş¹¦ÄÜÃèÊö£ºÓïÒôĞÅºÅµÄÍ¨ÓÃ²Ù×÷£¨¶ÁĞ´¡¢ÖØ²ÉÑù¡¢»æÖÆ²¨ĞÎ¡¢¼Ó´°·ÖÖ¡£©
-// ´´½¨Õß£ºSeventeenChen
-// Ê±¼ä£º2021/12/21
-// ĞŞ¸ÄÈË£º
-// Ê±¼ä£º
-// ĞŞ¸ÄËµÃ÷£º
-// Èí¼ş°æ±¾£ºVS2015
+// æ–‡ä»¶åï¼šuniversal.h
+// æ–‡ä»¶åŠŸèƒ½æè¿°ï¼šè¯­éŸ³ä¿¡å·çš„é€šç”¨æ“ä½œï¼ˆè¯»å†™ã€é‡é‡‡æ ·ã€ç»˜åˆ¶æ³¢å½¢ã€åŠ çª—åˆ†å¸§ï¼‰
+// åˆ›å»ºè€…ï¼šSeventeenChen
+// æ—¶é—´ï¼š2021/12/21
+// ä¿®æ”¹äººï¼š
+// æ—¶é—´ï¼š
+// ä¿®æ”¹è¯´æ˜ï¼š
+// è½¯ä»¶ç‰ˆæœ¬ï¼šVS2015
 //----------------------------------------------------------------*/
 #pragma once
 #include <string>
@@ -16,16 +16,16 @@
 #include <vector>
 #include <numeric>
 #include <tuple>
-// #include <GLFW/glfw3.h>
+#include <GLFW/glfw3.h>
 #include <fstream>
 #include <iostream>
 #include <cstdint>
 #include <memory>
 #include <sstream>
 #include <algorithm>
-// #include "spline.h"
+#include "spline.h"
 using namespace std;
-// using namespace SplineSpace;
+using namespace SplineSpace;
 
 typedef char CHAR;
 typedef unsigned long DWORD;
@@ -35,7 +35,7 @@ typedef unsigned short WORD;
 typedef short SHORT;
 
 const double max_16_bits = 32768;
-const double max_8_bits = 128;	//ÒòÎª¹éÒ»»¯µ½-1µ½1
+const double max_8_bits = 128;	//å› ä¸ºå½’ä¸€åŒ–åˆ°-1åˆ°1
 
 #ifndef _pi_
 #define _pi_  3.1415926535898
@@ -47,183 +47,183 @@ const double max_8_bits = 128;	//ÒòÎª¹éÒ»»¯µ½-1µ½1
 
 template <char ch0, char ch1, char ch2, char ch3> struct MakeFOURCC { enum { value = (ch0 << 0) + (ch1 << 8) + (ch2 << 16) + (ch3 << 24) }; };
 /*-----------------------------------------------------------------
-// ¹¦ÄÜÃèÊö£ºwavÎÄ¼şÍ·½á¹¹Ìå
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// åŠŸèƒ½æè¿°ï¼šwavæ–‡ä»¶å¤´ç»“æ„ä½“
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-struct Wave		// 44×Ö½Ú ²Î¿¼£ºhttps://docs.fileformat.com/audio/wav/
+struct Wave		// 44å­—èŠ‚ å‚è€ƒï¼šhttps://docs.fileformat.com/audio/wav/
 {
-	//RIFF Í·
-	CHAR szRiffID[4];	// 1-4£º"RIFF"
+	//RIFF å¤´
+	CHAR szRiffID[4];	// 1-4ï¼š"RIFF"
 						// typedef unsigned long DWORD; 
-	DWORD dwRiffSize;	// 5-8£º³ıÁËRIFF¼°×Ô¼ºÍâ£¬Õû¸öÎÄ¼şµÄ³¤¶È£¬×Ü×Ö½ÚÊı - 8
-	CHAR szRiffFormat[4];	// 9-12£ºÎÄ¼şÀàĞÍ£¬Èç 'WAVE' / 'AVI' 
+	DWORD dwRiffSize;	// 5-8ï¼šé™¤äº†RIFFåŠè‡ªå·±å¤–ï¼Œæ•´ä¸ªæ–‡ä»¶çš„é•¿åº¦ï¼Œæ€»å­—èŠ‚æ•° - 8
+	CHAR szRiffFormat[4];	// 9-12ï¼šæ–‡ä»¶ç±»å‹ï¼Œå¦‚ 'WAVE' / 'AVI' 
 
 							//fmt chunk
-	CHAR szFmtID[4];	// 13-16£ºÇø¿éµÄASCIIÊ¶±ğ×Ö£¬'fmt' / 'data'
-	DWORD dwFmtSize;	// 17-20£ºÉÏÊöÁĞ³öµÄ¸ñÊ½Êı¾İ³¤¶È£¬Ò»°ãÎª16
-	WORD wFormatTag;	// 21-22£º±àÂë¸ñÊ½£¨PCM:1, 2×Ö½Úint£©
-	WORD wChannels;		// 23-24£ºÍ¨µÀÊı£¬2×Ö½Úint
-	DWORD SampleRate;	// 25-28£º²ÉÑùÂÊ£¬32×Ö½Úint£¬44100£¨CD£©/48000£¨DAT£©Hz
-	DWORD ByteRate;		// 29-32£º×Ö½ÚÂÊ£º(²ÉÑùÂÊ * ²ÉÑùÎ»¿í * Í¨µÀÊı) / 8
-	WORD wBlockAlign;	// 33-34£º¿é¶ÔÆëÄÚÈİ£º£¨²ÉÑùÎ»¿í * Í¨µÀÊı£©/ 8£» Ò»Ö¡×Ö½ÚÊı
-	WORD wBitsPerSample;	// 35-36£º²ÉÑùÎ»¿í£¨Ã¿¸öÑù±¾µãµÄÎ»Êı£© e.g. 16
+	CHAR szFmtID[4];	// 13-16ï¼šåŒºå—çš„ASCIIè¯†åˆ«å­—ï¼Œ'fmt' / 'data'
+	DWORD dwFmtSize;	// 17-20ï¼šä¸Šè¿°åˆ—å‡ºçš„æ ¼å¼æ•°æ®é•¿åº¦ï¼Œä¸€èˆ¬ä¸º16
+	WORD wFormatTag;	// 21-22ï¼šç¼–ç æ ¼å¼ï¼ˆPCM:1, 2å­—èŠ‚intï¼‰
+	WORD wChannels;		// 23-24ï¼šé€šé“æ•°ï¼Œ2å­—èŠ‚int
+	DWORD SampleRate;	// 25-28ï¼šé‡‡æ ·ç‡ï¼Œ32å­—èŠ‚intï¼Œ44100ï¼ˆCDï¼‰/48000ï¼ˆDATï¼‰Hz
+	DWORD ByteRate;		// 29-32ï¼šå­—èŠ‚ç‡ï¼š(é‡‡æ ·ç‡ * é‡‡æ ·ä½å®½ * é€šé“æ•°) / 8
+	WORD wBlockAlign;	// 33-34ï¼šå—å¯¹é½å†…å®¹ï¼šï¼ˆé‡‡æ ·ä½å®½ * é€šé“æ•°ï¼‰/ 8ï¼› ä¸€å¸§å­—èŠ‚æ•°
+	WORD wBitsPerSample;	// 35-36ï¼šé‡‡æ ·ä½å®½ï¼ˆæ¯ä¸ªæ ·æœ¬ç‚¹çš„ä½æ•°ï¼‰ e.g. 16
 
 							//data chunk
-	CHAR szDataID[4];	// 37-40£ºÊı¾İ¿éµÄÍ·, ±ê¼ÇÊı¾İÇøµÄÆğÊ¼
-	DWORD dwDataSize;	// 41-44£ºÒôÆµÊı¾İ´óĞ¡£¨×Ö½Ú£©£¬ÎÄ¼ş×Ü×Ö½ÚÊı - 44£» duration = szDataID / BytesRate
+	CHAR szDataID[4];	// 37-40ï¼šæ•°æ®å—çš„å¤´, æ ‡è®°æ•°æ®åŒºçš„èµ·å§‹
+	DWORD dwDataSize;	// 41-44ï¼šéŸ³é¢‘æ•°æ®å¤§å°ï¼ˆå­—èŠ‚ï¼‰ï¼Œæ–‡ä»¶æ€»å­—èŠ‚æ•° - 44ï¼› duration = szDataID / BytesRate
 };
 
 /*-----------------------------------------------------------------
-// ¹¦ÄÜÃèÊö£ºCwaveÀà£¬°üÀ¨ÎÄ¼şÍ·£¬ÒôÆµÊı¾İ¶ÔÏó¼°»ù±¾³ÉÔ±º¯Êı
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/11/27
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// åŠŸèƒ½æè¿°ï¼šCwaveç±»ï¼ŒåŒ…æ‹¬æ–‡ä»¶å¤´ï¼ŒéŸ³é¢‘æ•°æ®å¯¹è±¡åŠåŸºæœ¬æˆå‘˜å‡½æ•°
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/11/27
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 class CWave
 {
-public: // ½ö´ÓĞòÁĞ»¯´´½¨
-	CWave();	// ¹¹Ôìº¯Êı
+public: // ä»…ä»åºåˆ—åŒ–åˆ›å»º
+	CWave();	// æ„é€ å‡½æ•°
 				//DECLARE_SERIAL(CWave)
-	CWave(const CWave &wave);	// ¿½±´¹¹Ôìº¯Êı£¬waveÊÇÒ»¸ö¶ÔÏóÒıÓÃ£¬ÓÃÓÚ³õÊ¼»¯ÁíÒ»¸ö¶ÔÏó
-								// ³ÉÔ±º¯Êı£¬²ÎÊıºÍ·µ»ØÖµ¶¼Ê¹ÓÃÒıÓÃµÄ·½Ê½£¬ÇÒÊäÈëÎª³£Á¿ÒıÓÃ£¬¼´²»¿É¸ü¸ÄÆäÊıÖµ
-	CWave & operator=(const CWave &wave);	// ¸³Öµ³ÉÔ±º¯Êı£¬¶ÔÀàµÄ¶ÔÏó½øĞĞ¸³Öµ
-	virtual ~CWave();	// Îö¹¹º¯Êı
-public:		// Àà³ÉÔ±º¯Êı
-	Wave m_wave;	// wavÎÄ¼şÍ·£¨½á¹¹Ìå£©
-					// vector£ºÄÜ¹»´æ·ÅÈÎÒâÀàĞÍµÄ¶¯Ì¬Êı×é
-	std::vector<double> m_dataArray;	// ÒôÆµÊı¾İ
+	CWave(const CWave &wave);	// æ‹·è´æ„é€ å‡½æ•°ï¼Œwaveæ˜¯ä¸€ä¸ªå¯¹è±¡å¼•ç”¨ï¼Œç”¨äºåˆå§‹åŒ–å¦ä¸€ä¸ªå¯¹è±¡
+								// æˆå‘˜å‡½æ•°ï¼Œå‚æ•°å’Œè¿”å›å€¼éƒ½ä½¿ç”¨å¼•ç”¨çš„æ–¹å¼ï¼Œä¸”è¾“å…¥ä¸ºå¸¸é‡å¼•ç”¨ï¼Œå³ä¸å¯æ›´æ”¹å…¶æ•°å€¼
+	CWave & operator=(const CWave &wave);	// èµ‹å€¼æˆå‘˜å‡½æ•°ï¼Œå¯¹ç±»çš„å¯¹è±¡è¿›è¡Œèµ‹å€¼
+	virtual ~CWave();	// ææ„å‡½æ•°
+public:		// ç±»æˆå‘˜å‡½æ•°
+	Wave m_wave;	// wavæ–‡ä»¶å¤´ï¼ˆç»“æ„ä½“ï¼‰
+					// vectorï¼šèƒ½å¤Ÿå­˜æ”¾ä»»æ„ç±»å‹çš„åŠ¨æ€æ•°ç»„
+	std::vector<double> m_dataArray;	// éŸ³é¢‘æ•°æ®
 public:
-	void SetWave();		//ÉèÖÃ.wavÎÄ¼şµÄÄ¬ÈÏĞÎÊ½
-	void CWave::read(string file);	// ´ÓÎÄ¼şÖĞ¶ÁÈëÄÚÈİµ½ÄÚ´æ		
+	void SetWave();		//è®¾ç½®.wavæ–‡ä»¶çš„é»˜è®¤å½¢å¼
+	void CWave::read(string file);	// ä»æ–‡ä»¶ä¸­è¯»å…¥å†…å®¹åˆ°å†…å­˜		
 										
-	template<typename DataType>  //Ä£°åÉùÃ÷, DataType±íÊ¾Êı¾İÀàĞÍ
-	void Binary2Int(DataType &result, BYTE *ch, int M);	//M¸öbyte×ª»»Îªresult
-	void DisplayHeader();	// ¿ØÖÆÌ¨ÏÔÊ¾½âÎöÍ·ÎÄ¼ş²ÎÊı
-	void Normalization();	// ÊıÖµ¹éÒ»»¯
+	template<typename DataType>  //æ¨¡æ¿å£°æ˜, DataTypeè¡¨ç¤ºæ•°æ®ç±»å‹
+	void Binary2Int(DataType &result, BYTE *ch, int M);	//Mä¸ªbyteè½¬æ¢ä¸ºresult
+	void DisplayHeader();	// æ§åˆ¶å°æ˜¾ç¤ºè§£æå¤´æ–‡ä»¶å‚æ•°
+	void Normalization();	// æ•°å€¼å½’ä¸€åŒ–
 							// void invNormalization();
 };
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºwavÎÄ¼şÃû£¨string£©£¬²ÉÑùÂÊ£¨int£©£¬ÊÇ·ñÏÔÊ¾ÎÄ¼şÍ·£¨bool£©
-// Êä³ö£ºwavÓïÒôÍ·Êı¾İÖÁ¿ØÖÆÌ¨£¬wavÒôÆµÊı¾İ£¨¹éÒ»»¯£©ÖÁtxtÎÄ¼ş
-// ¹¦ÄÜÃèÊö£ºÓïÒôĞÅºÅµÄ¶ÁÈ¡£¬·µ»ØÒôÆµÊı¾İÓë²ÉÑùÂÊ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/06
-// ĞŞ¸ÄÈË£ºSeventeenChen
-// ¼ÇÂ¼£º¿ÉÍ¬Ê±·µ»ØÒôÆµÊı¾İÓë²ÉÑùÆµÂÊ
-// ÈÕÆÚ£º2021/12/07
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šwavæ–‡ä»¶åï¼ˆstringï¼‰ï¼Œé‡‡æ ·ç‡ï¼ˆintï¼‰ï¼Œæ˜¯å¦æ˜¾ç¤ºæ–‡ä»¶å¤´ï¼ˆboolï¼‰
+// è¾“å‡ºï¼šwavè¯­éŸ³å¤´æ•°æ®è‡³æ§åˆ¶å°ï¼ŒwavéŸ³é¢‘æ•°æ®ï¼ˆå½’ä¸€åŒ–ï¼‰è‡³txtæ–‡ä»¶
+// åŠŸèƒ½æè¿°ï¼šè¯­éŸ³ä¿¡å·çš„è¯»å–ï¼Œè¿”å›éŸ³é¢‘æ•°æ®ä¸é‡‡æ ·ç‡
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/06
+// ä¿®æ”¹äººï¼šSeventeenChen
+// è®°å½•ï¼šå¯åŒæ—¶è¿”å›éŸ³é¢‘æ•°æ®ä¸é‡‡æ ·é¢‘ç‡
+// æ—¥æœŸï¼š2021/12/07
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::tuple<vector <double>, int> audioread(string filepath, int fs, bool disp_flag);
 
 std::tuple<vector<double>, int> GetFileData(string WcsTrainDataName, int fs, bool disp_flag);
-//¶ÁÈ¡ÎÄ¼şÄÚÈİ£¬·µ»ØÒôÆµÊı¾İºÍ²ÉÑùÂÊ
+//è¯»å–æ–‡ä»¶å†…å®¹ï¼Œè¿”å›éŸ³é¢‘æ•°æ®å’Œé‡‡æ ·ç‡
 
 void GetInputData(std::vector<double> &in_dataArray, std::vector<double>&out_dataArray, int flag);
-//GetInputData:ÓÃÓÚ´ÓÒôÆµÎÄ¼şÖĞ»ñÈ¡ÓÃÓÚ´¦ÀíµÄÊı¾İ£¬in_dataArrayÊÇÊäÈëÓïÒôÊı¾İ£¬out_dataArrayÊÇÊä³öÊı¾İ¡£
-//flag==2Ê±£¬out_dataArrayÎªin_dataArrayµÄÅ¼ÊıĞòºÅÊı£»
-//flag==1Ê±£¬out_dataArray=in_dataArray
+//GetInputData:ç”¨äºä»éŸ³é¢‘æ–‡ä»¶ä¸­è·å–ç”¨äºå¤„ç†çš„æ•°æ®ï¼Œin_dataArrayæ˜¯è¾“å…¥è¯­éŸ³æ•°æ®ï¼Œout_dataArrayæ˜¯è¾“å‡ºæ•°æ®ã€‚
+//flag==2æ—¶ï¼Œout_dataArrayä¸ºin_dataArrayçš„å¶æ•°åºå·æ•°ï¼›
+//flag==1æ—¶ï¼Œout_dataArray=in_dataArray
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º´ı»æÖÆÊı¾İ£¨vector£©£¬»æÖÆÍ¼Æ¬title£¨×Ö·ûÊı×é£©
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£ºopenGL»æÖÆ²¨ĞÎÍ¼
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/11
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// °æ±¾£º
+// è¾“å…¥ï¼šå¾…ç»˜åˆ¶æ•°æ®ï¼ˆvectorï¼‰ï¼Œç»˜åˆ¶å›¾ç‰‡titleï¼ˆå­—ç¬¦æ•°ç»„ï¼‰
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šopenGLç»˜åˆ¶æ³¢å½¢å›¾
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/11
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-// int GLFWPlot(std::vector<double> in_dataArray, const char *title);
+int GLFWPlot(std::vector<double> in_dataArray, const char *title);
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º´ı»æÖÆÊı¾İ£¨vector£©
-// Êä³ö£º
-// ¹¦ÄÜÃèÊö£º»æÖÆ²¨ĞÎÍ¼
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/11
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// °æ±¾£º
+// è¾“å…¥ï¼šå¾…ç»˜åˆ¶æ•°æ®ï¼ˆvectorï¼‰
+// è¾“å‡ºï¼š
+// åŠŸèƒ½æè¿°ï¼šç»˜åˆ¶æ³¢å½¢å›¾
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/11
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-// void audioplot(std::vector<double> in_dataArray);
+void audioplot(std::vector<double> in_dataArray);
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÓïÒôĞÅºÅin_array£¬´°º¯Êıwin£¬Ö¡ÒÆframe_shift
-// Êä³ö£º·ÖÖ¡ºóÊı×é£¬Ö¡Êı x Ö¡³¤
-// ¹¦ÄÜÃèÊö£º·ÖÖ¡
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/09
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šè¯­éŸ³ä¿¡å·in_arrayï¼Œçª—å‡½æ•°winï¼Œå¸§ç§»frame_shift
+// è¾“å‡ºï¼šåˆ†å¸§åæ•°ç»„ï¼Œå¸§æ•° x å¸§é•¿
+// åŠŸèƒ½æè¿°ï¼šåˆ†å¸§
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/09
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::vector<vector<double> > enframe(vector<double> in_array, vector<double> win, int frame_shift);
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º´°³¤£¨int£©£¬´°ÀàĞÍ£º¾ØĞÎ"default"/ººÃ÷"hamming"/ººÄş"hanning"
-// Êä³ö£º´°º¯Êı£¨vector£©
-// ¹¦ÄÜÃèÊö£º´°º¯Êı¸³Öµ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/09
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šçª—é•¿ï¼ˆintï¼‰ï¼Œçª—ç±»å‹ï¼šçŸ©å½¢"default"/æ±‰æ˜"hamming"/æ±‰å®"hanning"
+// è¾“å‡ºï¼šçª—å‡½æ•°ï¼ˆvectorï¼‰
+// åŠŸèƒ½æè¿°ï¼šçª—å‡½æ•°èµ‹å€¼
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/09
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::vector<double> window(int window_length, string window_type);
 
 /*-----------------------------------------------------------------
-// ÊäÈë£º´ıÖØ²ÉÑùĞÅºÅ£¨Ò»Î¬Êı×é vector£©£¬Ä¿±ê²ÉÑùÂÊ£¬Ô­Ê¼²ÉÑùÂÊ
-// Êä³ö£ºÖØ²ÉÑùºóĞÅºÅ£¨Ò»Î¬Êı×é vector£©
-// ¹¦ÄÜÃèÊö£ºÒ»Î¬ĞÅºÅµÄÖØ²ÉÑù
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/11
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// °æ±¾£º
+// è¾“å…¥ï¼šå¾…é‡é‡‡æ ·ä¿¡å·ï¼ˆä¸€ç»´æ•°ç»„ vectorï¼‰ï¼Œç›®æ ‡é‡‡æ ·ç‡ï¼ŒåŸå§‹é‡‡æ ·ç‡
+// è¾“å‡ºï¼šé‡é‡‡æ ·åä¿¡å·ï¼ˆä¸€ç»´æ•°ç»„ vectorï¼‰
+// åŠŸèƒ½æè¿°ï¼šä¸€ç»´ä¿¡å·çš„é‡é‡‡æ ·
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/11
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
-// std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs);
+std::vector<double> resample(vector<double> in_array, int target_fs, int source_fs);
 
 // Format chunk data field
 struct Wave_format {
 
-	uint16_t format_tag;      // WAVEµÄÊı¾İ¸ñÊ½£¬PCMÊı¾İ¸ÃÖµÎª1
-	uint16_t channels;        // ÉùµÀÊı
-	uint32_t sample_per_sec;  // ²ÉÑùÂÊ
-	uint32_t bytes_per_sec;   // ÂëÂÊ£¬channels * sample_per_sec * bits_per_sample / 8
-	uint16_t block_align;     // ÒôÆµÊı¾İ¿é£¬Ã¿´Î²ÉÑù´¦ÀíµÄÊı¾İ´óĞ¡£¬channels * bits_per_sample / 8
-	uint16_t bits_per_sample; // Á¿»¯Î»Êı£¬8¡¢16¡¢32µÈ
-	uint16_t ex_size;         // À©Õ¹¿éµÄ´óĞ¡£¬¸½¼Ó¿éµÄ´óĞ¡
+	uint16_t format_tag;      // WAVEçš„æ•°æ®æ ¼å¼ï¼ŒPCMæ•°æ®è¯¥å€¼ä¸º1
+	uint16_t channels;        // å£°é“æ•°
+	uint32_t sample_per_sec;  // é‡‡æ ·ç‡
+	uint32_t bytes_per_sec;   // ç ç‡ï¼Œchannels * sample_per_sec * bits_per_sample / 8
+	uint16_t block_align;     // éŸ³é¢‘æ•°æ®å—ï¼Œæ¯æ¬¡é‡‡æ ·å¤„ç†çš„æ•°æ®å¤§å°ï¼Œchannels * bits_per_sample / 8
+	uint16_t bits_per_sample; // é‡åŒ–ä½æ•°ï¼Œ8ã€16ã€32ç­‰
+	uint16_t ex_size;         // æ‰©å±•å—çš„å¤§å°ï¼Œé™„åŠ å—çš„å¤§å°
 
 	Wave_format()
 	{
@@ -241,7 +241,7 @@ struct Wave_format {
 		:channels(nb_channel), sample_per_sec(sample_rate), bits_per_sample(sample_bits)
 	{
 		format_tag = 0x01;                                           // PCM format data
-		bytes_per_sec = channels * sample_per_sec * bits_per_sample / 8; // ÂëÂÊ
+		bytes_per_sec = channels * sample_per_sec * bits_per_sample / 8; // ç ç‡
 		block_align = channels * bits_per_sample / 8;
 		ex_size = 0;                                               // don't use extension field
 	}
@@ -251,7 +251,7 @@ struct Wave_format {
 struct Base_chunk {
 
 	_FOURCC fcc;    // FourCC id
-	uint32_t cb_size; // Êı¾İÓòµÄ´óĞ¡
+	uint32_t cb_size; // æ•°æ®åŸŸçš„å¤§å°
 
 	Base_chunk(_FOURCC fourcc)
 		: fcc(fourcc)
@@ -262,7 +262,7 @@ struct Base_chunk {
 
 /*
 
-Êı¾İ¸ñÊ½ÎªPCMµÄWAVÎÄ¼şµÄ»ù±¾½á¹¹
+æ•°æ®æ ¼å¼ä¸ºPCMçš„WAVæ–‡ä»¶çš„åŸºæœ¬ç»“æ„
 --------------------------------
 | Base_chunk | RIFF	|
 ---------------------
@@ -280,7 +280,7 @@ struct Base_chunk {
 
 /*
 
-Êı¾İ¸ñÊ½ÎªPCMµÄWAVÎÄ¼şÍ·
+æ•°æ®æ ¼å¼ä¸ºPCMçš„WAVæ–‡ä»¶å¤´
 --------------------------------
 | Base_chunk | RIFF	|
 ---------------------
@@ -380,7 +380,7 @@ public:
 		if (!read_header(filename))
 			return false;
 
-		// PCM Êı¾İÏà¶ÔÎÄ¼şÍ·Î»ÖÃµÄÆ«ÒÆÁ¿£¬ +8£¨RIFF fourcc +4£¬size + 4£©
+		// PCM æ•°æ®ç›¸å¯¹æ–‡ä»¶å¤´ä½ç½®çš„åç§»é‡ï¼Œ +8ï¼ˆRIFF fourcc +4ï¼Œsize + 4ï¼‰
 		uint32_t offset = header->riff->cb_size - header->data->cb_size + 8;
 		data = unique_ptr<uint8_t[]>(new uint8_t[header->data->cb_size]);
 
@@ -410,7 +410,7 @@ private:
 		_FOURCC fourcc;
 		ifs.read((char*)&fourcc, sizeof(_FOURCC));
 
-		if (fourcc != MakeFOURCC<'R', 'I', 'F', 'F'>::value) // ÅĞ¶ÏÊÇ²»ÊÇRIFF
+		if (fourcc != MakeFOURCC<'R', 'I', 'F', 'F'>::value) // åˆ¤æ–­æ˜¯ä¸æ˜¯RIFF
 			return false;
 		Base_chunk riff_chunk(fourcc);
 		ifs.read((char*)&riff_chunk.cb_size, sizeof(uint32_t));
@@ -458,31 +458,31 @@ public:
 };
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÓïÒôĞÅºÅy£¬²ÉÑùÂÊfs£¬´æ´¢µØÖ·filepath
-// Êä³ö£ºfilepath.wavÎÄ¼ş
-// ¹¦ÄÜÃèÊö£ºÓïÒôĞÅºÅµÄĞ´Èë´æ´¢
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/16
-// TODO£ºÏÖ½öÖ§³Ö16Î»´æ´¢£¬´ıÓÅ»¯ÖÁÆäËûÎ»Êı£¨Èç8/32µÈ£©
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šè¯­éŸ³ä¿¡å·yï¼Œé‡‡æ ·ç‡fsï¼Œå­˜å‚¨åœ°å€filepath
+// è¾“å‡ºï¼šfilepath.wavæ–‡ä»¶
+// åŠŸèƒ½æè¿°ï¼šè¯­éŸ³ä¿¡å·çš„å†™å…¥å­˜å‚¨
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/16
+// TODOï¼šç°ä»…æ”¯æŒ16ä½å­˜å‚¨ï¼Œå¾…ä¼˜åŒ–è‡³å…¶ä»–ä½æ•°ï¼ˆå¦‚8/32ç­‰ï¼‰
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 void audiowrite(vector<double> y, int fs, string filepath);
 
 /*-----------------------------------------------------------------
-// ÊäÈë£ºÒôÆµÊı¾İ£¨vector£©
-// Êä³ö£ºÏû³ıÖ±Á÷·ÖÁ¿ºóÒôÆµÊı¾İ£¨vector£©
-// ¹¦ÄÜÃèÊö£º¶ÔÒôÆµÊı¾İÍ³Ò»Ïû³ıÖ±Á÷Æ«ÖÃ
-// ×÷Õß£ºSeventeenChen
-// ÈÕÆÚ£º2021/12/22
-// ĞŞ¸ÄÈË£º
-// ¼ÇÂ¼£º
-// ÈÕÆÚ£º
-// ¼ÇÂ¼£º
-// °æ±¾£º
+// è¾“å…¥ï¼šéŸ³é¢‘æ•°æ®ï¼ˆvectorï¼‰
+// è¾“å‡ºï¼šæ¶ˆé™¤ç›´æµåˆ†é‡åéŸ³é¢‘æ•°æ®ï¼ˆvectorï¼‰
+// åŠŸèƒ½æè¿°ï¼šå¯¹éŸ³é¢‘æ•°æ®ç»Ÿä¸€æ¶ˆé™¤ç›´æµåç½®
+// ä½œè€…ï¼šSeventeenChen
+// æ—¥æœŸï¼š2021/12/22
+// ä¿®æ”¹äººï¼š
+// è®°å½•ï¼š
+// æ—¥æœŸï¼š
+// è®°å½•ï¼š
+// ç‰ˆæœ¬ï¼š
 -----------------------------------------------------------------*/
 std::vector<double> dc_removal(vector<double> in_array);
