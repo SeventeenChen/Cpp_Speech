@@ -1,14 +1,6 @@
-﻿  universal.cpp
-e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\universal.cpp(157): warning C4244: “初始化”: 从“std::streamoff”转换到“int”，可能丢失数据
-e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\universal.cpp(542): warning C4305: “参数”: 从“double”到“GLclampf”截断
-e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\universal.cpp(558): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\universal.cpp(565): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
-e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\universal.cpp(685): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\universal.cpp(739): warning C4018: “<”: 有符号/无符号不匹配
-e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\universal.cpp(741): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-  spline.cpp
-  main.cpp
-  glad.c
+﻿  main.cpp
   正在生成代码...
-LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+  正在编译...
+  stft.cpp
+  正在生成代码...
   Chapter02_TFDomain_ShortTime.vcxproj -> E:\VSProject\Cpp_Speech\Chapter02_TFDomain_ShortTime\Debug\Chapter02_TFDomain_ShortTime.exe

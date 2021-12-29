@@ -19,16 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Complex.cpp" />
+    <ClCompile Include="FFT.cpp" />
     <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="spline.cpp" />
+    <ClCompile Include="stft.cpp" />
     <ClCompile Include="universal.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Complex.h" />
+    <ClInclude Include="FFT.h" />
     <ClInclude Include="spline.h" />
+    <ClInclude Include="stft.h" />
     <ClInclude Include="universal.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -113,7 +119,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glfw3.lib;glfw3_mt.lib;glfw3dll.lib;opengl32.lib;User32.lib;Gdi32.lib;shell32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>H:\EXE\glfw-3.3.5.bin.WIN32\lib-vc2015;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>

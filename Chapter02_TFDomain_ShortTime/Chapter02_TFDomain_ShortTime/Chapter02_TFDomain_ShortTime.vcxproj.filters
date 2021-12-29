@@ -27,6 +27,15 @@
     <ClCompile Include="glad.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Complex.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FFT.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stft.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav">
@@ -38,6 +47,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="spline.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Complex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FFT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stft.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

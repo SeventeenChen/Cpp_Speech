@@ -3,6 +3,7 @@
 //#include "stzcr.h"
 //#include "xcorr.h"
 //#include "stamd.h"
+#include "stft.h"
 
 int main()
 {
@@ -70,7 +71,10 @@ int main()
 	//vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// 初始化输出数组
 	//d = stftms(in_array, hann_window, nfft, frame_shift);
 
-
+	// 短时傅里叶变换 stft
+	int nfft = 256;
+	vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// 初始化输出数组
+	d = stft(in_array, hann_window, nfft, frame_shift);
 	return 0;
 }
 
