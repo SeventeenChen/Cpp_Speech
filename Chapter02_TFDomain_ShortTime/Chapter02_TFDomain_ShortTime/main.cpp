@@ -1,4 +1,4 @@
-ï»¿#include "universal.h"	
+#include "universal.h"	
 //#include "ste.h"
 //#include "stzcr.h"
 //#include "xcorr.h"
@@ -7,42 +7,42 @@
 
 int main()
 {
-	string filepath = "bluesky3.wav";	// å¯ä»¥æ˜¯ç»å¯¹è·¯å¾„ 
+	string filepath = "bluesky3.wav";	// ¿ÉÒÔÊÇ¾ø¶ÔÂ·¾¶ 
 	int fs = 16000;
 	bool disp_flag = false;
 	std::tuple<vector <double>, int> in_data;
 	std::vector<double> in_array;
 
-	// æ³¨ï¼šé¡¹ç›®å³é”®-å±æ€§-é“¾æ¥å™¨-ç³»ç»Ÿ-å­ç³»ç»Ÿ-æ§åˆ¶å°
-	in_data = audioread(filepath, fs, disp_flag);	// è¯­éŸ³ä¿¡å·çš„è¯»å–
+	// ×¢£ºÏîÄ¿ÓÒ¼ü-ÊôĞÔ-Á´½ÓÆ÷-ÏµÍ³-×ÓÏµÍ³-¿ØÖÆÌ¨
+	in_data = audioread(filepath, fs, disp_flag);	// ÓïÒôĞÅºÅµÄ¶ÁÈ¡
 
-	in_array = std::get<0>(in_data);	// éŸ³é¢‘æ•°æ®
-	fs = std::get<1>(in_data);			// é‡‡æ ·é¢‘ç‡
+	in_array = std::get<0>(in_data);	// ÒôÆµÊı¾İ
+	fs = std::get<1>(in_data);			// ²ÉÑùÆµÂÊ
 
 
 	int win_len = 200;	// set 10 for test
 	int frame_shift = 80;
-	std::vector<double> hann_window(win_len);	// æ±‰å®çª—
+	std::vector<double> hann_window(win_len);	// ººÄş´°
 	hann_window = window(win_len, "hanning");
 	int frame_num = (in_array.size() - win_len + frame_shift) / frame_shift;
 
-	//// çŸ­æ—¶èƒ½é‡æµ‹è¯•
+	//// ¶ÌÊ±ÄÜÁ¿²âÊÔ
 	//std::vector<double> En(frame_num);
-	//En = energy(in_array, hann_window, frame_shift);	// çŸ­æ—¶èƒ½é‡
+	//En = energy(in_array, hann_window, frame_shift);	// ¶ÌÊ±ÄÜÁ¿
 	//GLFWPlot(En, "Short Time Energy");
 
-	//// çŸ­æ—¶å¹³å‡è¿‡é›¶ç‡æµ‹è¯•
+	//// ¶ÌÊ±Æ½¾ù¹ıÁãÂÊ²âÊÔ
 	//std::vector<double> Zcr(frame_num);
-	//Zcr = zero_cross(in_array, hann_window, frame_shift);	// çŸ­æ—¶è¿‡é›¶ç‡
+	//Zcr = zero_cross(in_array, hann_window, frame_shift);	// ¶ÌÊ±¹ıÁãÂÊ
 	//GLFWPlot(Zcr, "Short Time Average Zero Cross Rate");
 
-	//// çŸ­æ—¶è‡ªç›¸å…³æµ‹è¯•
-	//vector<double> corr(2 * win_len - 1);	// åˆå§‹åŒ–è‡ªç›¸å…³æ•°ç»„
-	//vector<vector<double> >frame_signal(frame_num, vector<double>(win_len));	// åˆ†å¸§åæ•°æ®
+	//// ¶ÌÊ±×ÔÏà¹Ø²âÊÔ
+	//vector<double> corr(2 * win_len - 1);	// ³õÊ¼»¯×ÔÏà¹ØÊı×é
+	//vector<vector<double> >frame_signal(frame_num, vector<double>(win_len));	// ·ÖÖ¡ºóÊı¾İ
 	//frame_signal = enframe(in_array, hann_window, frame_shift);
-	//vector<double> one_frame(win_len);		// æå–ä¸€å¸§æ•°æ®
-	//int frame_index = 0;	// åˆå§‹åŒ–ç»˜åˆ¶å¸§æ•°ç´¢å¼•
-	//cout << "è¯·é—®æ‚¨æƒ³ç»˜åˆ¶å“ªä¸€å¸§ä¿¡å·çš„è‡ªç›¸å…³ï¼Ÿè¾“å…¥æ•°æ®éœ€ < " << frame_num << endl;
+	//vector<double> one_frame(win_len);		// ÌáÈ¡Ò»Ö¡Êı¾İ
+	//int frame_index = 0;	// ³õÊ¼»¯»æÖÆÖ¡ÊıË÷Òı
+	//cout << "ÇëÎÊÄúÏë»æÖÆÄÄÒ»Ö¡ĞÅºÅµÄ×ÔÏà¹Ø£¿ÊäÈëÊı¾İĞè < " << frame_num << endl;
 	//cin >> frame_index;
 	//for (int i = 0; i < win_len; i++)
 	//{
@@ -51,13 +51,13 @@ int main()
 	//corr = xcorr(one_frame, one_frame);
 	//GLFWPlot(corr, "Short Time Auto Correlation");
 
-	// çŸ­æ—¶å¹³å‡å¹…åº¦å·®æµ‹è¯•
-	//vector<double> amd(win_len);	// åˆå§‹åŒ–è‡ªç›¸å…³æ•°ç»„
-	//vector<vector<double> >frame_signal(frame_num, vector<double>(win_len));	// åˆ†å¸§åæ•°æ®
+	// ¶ÌÊ±Æ½¾ù·ù¶È²î²âÊÔ
+	//vector<double> amd(win_len);	// ³õÊ¼»¯×ÔÏà¹ØÊı×é
+	//vector<vector<double> >frame_signal(frame_num, vector<double>(win_len));	// ·ÖÖ¡ºóÊı¾İ
 	//frame_signal = enframe(in_array, hann_window, frame_shift);
-	//vector<double> one_frame(win_len);		// æå–ä¸€å¸§æ•°æ®
-	//int frame_index = 0;	// åˆå§‹åŒ–ç»˜åˆ¶å¸§æ•°ç´¢å¼•
-	//cout << "è¯·é—®æ‚¨æƒ³ç»˜åˆ¶å“ªä¸€å¸§ä¿¡å·çš„çŸ­æ—¶å¹³å‡å¹…åº¦å·®ï¼Ÿè¾“å…¥æ•°æ®éœ€ < " << frame_num << endl;
+	//vector<double> one_frame(win_len);		// ÌáÈ¡Ò»Ö¡Êı¾İ
+	//int frame_index = 0;	// ³õÊ¼»¯»æÖÆÖ¡ÊıË÷Òı
+	//cout << "ÇëÎÊÄúÏë»æÖÆÄÄÒ»Ö¡ĞÅºÅµÄ¶ÌÊ±Æ½¾ù·ù¶È²î£¿ÊäÈëÊı¾İĞè < " << frame_num << endl;
 	//cin >> frame_index;
 		//for (int i = 0; i < win_len; i++)
 	//{
@@ -66,15 +66,28 @@ int main()
 	//amd = amdf(one_frame);
 	//GLFWPlot(amd, "Short Time Average Magnitude Difference");
 
-	//// çŸ­æ—¶å‚…é‡Œå¶å˜æ¢ stftmsï¼ˆFFTW3ï¼‰
+	//// ¶ÌÊ±¸µÀïÒ¶±ä»» stftms£¨FFTW3£©
 	//int nfft = 256;
-	//vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// åˆå§‹åŒ–è¾“å‡ºæ•°ç»„
+	//vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// ³õÊ¼»¯Êä³öÊı×é
 	//d = stftms(in_array, hann_window, nfft, frame_shift);
 
-	// çŸ­æ—¶å‚…é‡Œå¶å˜æ¢ stft
+	// ¶ÌÊ±¸µÀïÒ¶±ä»» stft
 	int nfft = 256;
-	vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// åˆå§‹åŒ–è¾“å‡ºæ•°ç»„
+	vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// ³õÊ¼»¯Êä³öÊı×é
 	d = stft(in_array, hann_window, nfft, frame_shift);
+
+	// »æÖÆÄ³Ò»Ö¡µÄFFT·ùÆµÌØĞÔ
+	int frame_index = 0;	// ³õÊ¼»¯»æÖÆÖ¡ÊıË÷Òı
+	int frame_resolution = 1 + nfft / 2;
+	vector<double> one_frame_frequency(frame_resolution);	// ³õÊ¼»¯Ò»Ö¡µÄFFTµÄÄ£Öµ
+	cout << "ÇëÎÊÄúÏë»æÖÆÄÄÒ»Ö¡ĞÅºÅµÄ¶ÌÊ±Æ½¾ù·ù¶È²î£¿ÊäÈëÊı¾İĞè < " << frame_num << endl;
+	cin >> frame_index;
+	for (int i = 0; i < frame_resolution; i++)
+	{
+		one_frame_frequency[i] = abs(d[frame_index - 1][i]);
+	}
+	
+	GLFWPlot(one_frame_frequency, "One Frame Magnitude-Frequency Property");
 	return 0;
 }
 

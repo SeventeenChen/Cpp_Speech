@@ -552,17 +552,25 @@ void audioplot(std::vector<double> in_dataArray)
 	float xend = 0.0;
 	float yend = 0.0;
 	float temp = 0.0;
-
+	double max = in_dataArray[0];
 	int wav_length = in_dataArray.size();
+	for (i = 1; i < wav_length; i++)
+	{
+		if (max < in_dataArray[i])
+		{
+			max = in_dataArray[i];
+		}
+	}
+
 	float x_stepsize;
 	x_stepsize = 2.0 / wav_length;	// 根据数据长度计算步长，使得绘制数据水平铺满（-1~1）
-	for (i; i < wav_length; i++)
+	for (i = 0; i < wav_length; i++)
 	{
 		xstart = xstart + x_stepsize;
 		ystart = temp;
 		xend = xstart + x_stepsize;
 
-		yend = in_dataArray[i];
+		yend = in_dataArray[i]/max;
 
 		glVertex2f(xstart, ystart);	// 折线起点
 		glVertex2f(xend, yend);		// 折现终点

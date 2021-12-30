@@ -12,6 +12,18 @@
 //----------------------------------------------------------------*/
 #include "stft.h"
 
+/*-----------------------------------------------------------------
+// 输入：语音信号in_array，窗函数win，傅里叶变换点数nfft，帧移inc
+// 输出：短时傅里叶变换 帧数 x （1 + nfft/2）
+// 功能描述：语音信号的短时傅里叶变换
+// 作者：SeventeenChen
+// 日期：2021/12/30
+// 修改人：
+// 记录：
+// 修改人：
+// 记录：
+// 版本：
+-----------------------------------------------------------------*/
 vector<vector <complex<double> > >stft(vector<double>in_array, vector<double>win, int nfft, int inc)
 {
 	int inlen = 0, wlen = 0, frame_num = 0; // 输入信号长度, 窗函数长度，帧数初始化
@@ -39,7 +51,8 @@ vector<vector <complex<double> > >stft(vector<double>in_array, vector<double>win
 				inarr[i].imag = 0.0;
 			}
 		}
-		// FFT(inarr, outarr, nfft);
+		int r = log2(nfft);
+		FFT(inarr, outarr, r);
 		for (j = 0; j < 1 + nfft / 2; j++)
 		{
 			d[k][j] = complex<double>(outarr[j].real, outarr[j].imag);
