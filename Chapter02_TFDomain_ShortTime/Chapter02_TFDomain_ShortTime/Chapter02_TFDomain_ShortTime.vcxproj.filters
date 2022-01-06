@@ -36,6 +36,9 @@
     <ClCompile Include="stft.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="stpsd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Media Include="bluesky3.wav">
@@ -56,6 +59,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="stft.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stpsd.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

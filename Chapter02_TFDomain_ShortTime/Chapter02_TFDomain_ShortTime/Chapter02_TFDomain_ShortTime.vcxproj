@@ -25,6 +25,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="spline.cpp" />
     <ClCompile Include="stft.cpp" />
+    <ClCompile Include="stpsd.cpp" />
     <ClCompile Include="universal.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +36,7 @@
     <ClInclude Include="FFT.h" />
     <ClInclude Include="spline.h" />
     <ClInclude Include="stft.h" />
+    <ClInclude Include="stpsd.h" />
     <ClInclude Include="universal.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

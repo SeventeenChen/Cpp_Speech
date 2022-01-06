@@ -88,6 +88,7 @@ int main()
 	}
 	
 	GLFWPlot(one_frame_frequency, "One Frame Magnitude-Frequency Property");
+
 	return 0;
 }
 

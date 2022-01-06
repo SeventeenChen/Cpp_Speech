@@ -1,4 +1,62 @@
-﻿  main.cpp
+﻿  stpsd.cpp
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x85 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x87 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x88 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x89 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x8b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x8c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x99 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x9b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x9c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x9d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x9e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x9f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xa1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xa3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xa5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xa6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xa7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xa9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xab 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xad 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xb2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xb4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xb5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xb6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xb7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xb9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xbb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xbd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xbe 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xc4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xc5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xc6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xc7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xc8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xca 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xcb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xe0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xf3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xf5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xf6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0xfa 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x102 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x10b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x10d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x10e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x110 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x111 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x113 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x114 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x11a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x11c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x11d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x11e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x122 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stpsd.h : warning C4828: 文件包含在偏移 0x123 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  stft.cpp
+e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\stft.cpp(54): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+  main.cpp
 e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\main.cpp : warning C4828: 文件包含在偏移 0xb9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
 e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\main.cpp : warning C4828: 文件包含在偏移 0xba 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
 e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\main.cpp : warning C4828: 文件包含在偏移 0xbc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
@@ -269,5 +327,7 @@ e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttim
 e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\main.cpp : warning C4828: 文件包含在偏移 0xc2b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
 e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\main.cpp : warning C4828: 文件包含在偏移 0xc2c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
 e:\vsproject\cpp_speech\chapter02_tfdomain_shorttime\chapter02_tfdomain_shorttime\main.cpp : warning C4828: 文件包含在偏移 0xc2e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  正在生成代码...
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
   Chapter02_TFDomain_ShortTime.vcxproj -> E:\VsProject\Cpp_Speech\Chapter02_TFDomain_ShortTime\Debug\Chapter02_TFDomain_ShortTime.exe
   Chapter02_TFDomain_ShortTime.vcxproj -> E:\VsProject\Cpp_Speech\Chapter02_TFDomain_ShortTime\Debug\Chapter02_TFDomain_ShortTime.pdb (Full PDB)
