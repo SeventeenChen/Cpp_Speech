@@ -43,3 +43,20 @@ vector<vector <double> > periodogramPSE(vector<double>in_array, vector<double>wi
 	
 	return psd;
 }
+
+/*-----------------------------------------------------------------
+// 输入：语音信号in_array，窗函数win，傅里叶变换点数nfft，帧移inc
+// 输出：短时功率谱密度
+// 功能描述：短时功率谱密度的wlench窗法：
+// 作者：SeventeenChen
+// 日期：2021/01/08
+// 修改人：
+// 记录：
+// 修改人：
+// 记录：
+// 版本：
+-----------------------------------------------------------------*/
+vector<vector <double> > welchPSE(vector<double>in_array, vector<double>win, int nfft, int inc)
+{
+
+}
