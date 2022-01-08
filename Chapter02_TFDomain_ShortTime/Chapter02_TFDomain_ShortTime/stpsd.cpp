@@ -35,7 +35,7 @@ vector<vector <double> > periodogramPSE(vector<double>in_array, vector<double>wi
 	int i = 0, j = 0;	// 初始化循环因子
 	for (i = 0; i < frame_num; i++)
 	{
-		for (j = 0; j < wlen; j++)
+		for (j = 0; j < 1 + nfft / 2; j++)
 		{
 			psd[i][j] = abs(d[i][j]) * abs(d[i][j]) / wlen;
 		}

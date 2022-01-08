@@ -3,7 +3,8 @@
 //#include "stzcr.h"
 //#include "xcorr.h"
 //#include "stamd.h"
-#include "stft.h"
+//#include "stft.h"
+#include "stpsd.h"
 
 int main()
 {
@@ -72,23 +73,39 @@ int main()
 	//d = stftms(in_array, hann_window, nfft, frame_shift);
 
 	// 短时傅里叶变换 stft
-	int nfft = 256;
-	vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// 初始化输出数组
-	d = stft(in_array, hann_window, nfft, frame_shift);
+	//int nfft = 256;
+	//vector<vector <complex<double> > >d(frame_num, vector<complex<double> >((1 + nfft / 2)));	// 初始化输出数组
+	//d = stft(in_array, hann_window, nfft, frame_shift);
 
+	//// 绘制某一帧的FFT幅频特性
+	//int frame_index = 0;	// 初始化绘制帧数索引
+	//int frame_resolution = 1 + nfft / 2;
+	//vector<double> one_frame_frequency(frame_resolution);	// 初始化一帧的FFT的模值
+	//cout << "请问您想绘制哪一帧信号的频谱？输入数据需 < " << frame_num << endl;
+	//cin >> frame_index;
+	//for (int i = 0; i < frame_resolution; i++)
+	//{
+	//	one_frame_frequency[i] = abs(d[frame_index - 1][i]);
+	//}
+	//
+	//GLFWPlot(one_frame_frequency, "One Frame Magnitude-Frequency Property");
+
+	// 短时功率谱 stpsd
+	int nfft = 256;
+	vector<vector <double> >psd(frame_num, vector<double>((1 + nfft / 2)));	// 初始化psd数组
+	psd = periodogramPSE(in_array, hann_window, nfft, frame_shift);
 	// 绘制某一帧的FFT幅频特性
 	int frame_index = 0;	// 初始化绘制帧数索引
 	int frame_resolution = 1 + nfft / 2;
-	vector<double> one_frame_frequency(frame_resolution);	// 初始化一帧的FFT的模值
-	cout << "请问您想绘制哪一帧信号的短时平均幅度差？输入数据需 < " << frame_num << endl;
+	vector<double> one_frame_psd(frame_resolution);	// 初始化一帧的功率谱
+	cout << "请问您想绘制哪一帧的信号功率谱？输入数据需 < " << frame_num << endl;
 	cin >> frame_index;
 	for (int i = 0; i < frame_resolution; i++)
 	{
-		one_frame_frequency[i] = abs(d[frame_index - 1][i]);
+		one_frame_psd[i] = psd[frame_index - 1][i];
 	}
 	
-	GLFWPlot(one_frame_frequency, "One Frame Magnitude-Frequency Property");
-
+	GLFWPlot(one_frame_psd, "One Frame Power Spectrum");
 	return 0;
 }
 
